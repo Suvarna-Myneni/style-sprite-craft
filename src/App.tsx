@@ -12,6 +12,7 @@ import Grids from "./pages/Grids";
 import Illustrations from "./pages/Illustrations";
 import Background from "./pages/Background";
 import Tags from "./pages/Tags";
+import TabsPage from "./pages/Tabs";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/illustrations" element={<Illustrations />} />
           <Route path="/background" element={<Background />} />
           <Route path="/tags" element={<Tags />} />
+          <Route path="/tabs" element={<TabsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

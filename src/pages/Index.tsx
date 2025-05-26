@@ -14,7 +14,8 @@ import {
   Target,
   Users,
   Zap,
-  Tag
+  Tag,
+  Tabs as TabsIcon
 } from "lucide-react";
 
 const Index = () => {
@@ -46,6 +47,13 @@ const Index = () => {
       icon: Tag,
       path: "/tags",
       color: "bg-[#7C3AED]"
+    },
+    {
+      title: "Tabs",
+      description: "Navigation components for switching between content views",
+      icon: TabsIcon,
+      path: "/tabs",
+      color: "bg-[#DC2626]"
     },
     {
       title: "Grids",
