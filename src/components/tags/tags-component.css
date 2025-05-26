@@ -26,7 +26,7 @@
   width: fit-content;
 }
 
-/* Size variants */
+/* Size variants - matching your exact dimensions */
 .tags-component.base {
   padding: 2px 6px;
 }
@@ -37,6 +37,25 @@
 
 .tags-component.tiny {
   padding: 2px 6px;
+}
+
+/* Icon sizing to match your specifications */
+.tags-component.tiny .tags-left-icon,
+.tags-component.tiny .tags-right-icon {
+  height: 12px;
+  width: 12px;
+}
+
+.tags-component.base .tags-left-icon,
+.tags-component.base .tags-right-icon {
+  height: 14px;
+  width: 14px;
+}
+
+.tags-component.large .tags-left-icon,
+.tags-component.large .tags-right-icon {
+  height: 16px;
+  width: 16px;
 }
 
 /* Background colors */
@@ -72,12 +91,14 @@
   background-color: #ccf2db;
 }
 
-/* Typography */
+/* Typography - exact font specifications from your styleguide */
 .tags-component.base .tags-text-wrapper {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0px;
+  font-family: 'Roboto', Helvetica;
+  font-style: normal;
 }
 
 .tags-component.large .tags-text-wrapper {
@@ -85,6 +106,8 @@
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0px;
+  font-family: 'Roboto', Helvetica;
+  font-style: normal;
 }
 
 .tags-component.tiny .tags-text-wrapper {
@@ -92,6 +115,8 @@
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0px;
+  font-family: 'Roboto', Helvetica;
+  font-style: normal;
 }
 
 /* Text colors */

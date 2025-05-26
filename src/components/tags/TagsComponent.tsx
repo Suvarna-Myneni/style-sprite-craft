@@ -38,13 +38,6 @@ export const TagsComponent: React.FC<TagsComponentProps> = ({
     return 14;
   };
 
-  const getCloseIconSize = () => {
-    if (size === "tiny") return 12;
-    if (size === "base") return 14;
-    if (size === "large") return 16;
-    return 14;
-  };
-
   const baseClasses = `tags-component ${size} ${mode} ${status} ${className}`;
 
   return (
@@ -63,7 +56,7 @@ export const TagsComponent: React.FC<TagsComponentProps> = ({
 
       {showRightIcon && (
         <X 
-          size={getCloseIconSize()} 
+          size={getIconSize()} 
           color={getIconColor()}
           className="tags-right-icon"
         />
