@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { ArrowLeft, Tag, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -100,19 +101,19 @@ const Tags = () => {
   const sizes = [
     {
       name: "Tiny",
-      className: "text-xs px-2 py-0.5",
+      className: "text-xs px-2 py-0.5 rounded",
       example: "Label",
       description: "Minimum width: 200px or 32px flex padding"
     },
     {
       name: "Base",
-      className: "text-sm px-2.5 py-0.5",
+      className: "text-sm px-2.5 py-0.5 rounded",
       example: "Label",
       description: "Standard size for most use cases"
     },
     {
       name: "Large",
-      className: "text-base px-3 py-1",
+      className: "text-base px-3 py-1 rounded",
       example: "Label",
       description: "For emphasis or when more prominence is needed"
     }
