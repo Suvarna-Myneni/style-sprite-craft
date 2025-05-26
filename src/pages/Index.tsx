@@ -15,7 +15,7 @@ import {
   Users,
   Zap,
   Tag,
-  Tabs as TabsIcon
+  Layers as TabsIcon
 } from "lucide-react";
 
 const Index = () => {
