@@ -94,6 +94,46 @@ const TabsPage = () => {
           </div>
         </div>
 
+        {/* Anatomy */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Anatomy</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Tab Container",
+                description: "The outer box that holds all the individual tabs together, typically horizontally aligned. The container provides structure and allows for consistent spacing between tabs."
+              },
+              {
+                title: "Active Tab", 
+                description: "The tab currently selected by the user, visually distinct from other tabs. It highlights which view the user is in."
+              },
+              {
+                title: "Inactive Tabs",
+                description: "Tabs that are not selected, but are still available for interaction. These tabs should be clearly visible but less prominent compared to the active tab."
+              },
+              {
+                title: "Underline (Optional)",
+                description: "An underline below the active tab can act as an additional visual cue to indicate selection."
+              },
+              {
+                title: "Hover/Focus States",
+                description: "Interactive feedback for users when hovering over or focusing on a tab to indicate it's clickable or navigable."
+              }
+            ].map((anatomy) => (
+              <Card key={anatomy.title}>
+                <CardHeader>
+                  <CardTitle className="text-lg text-[#1B489B]">{anatomy.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm leading-relaxed">
+                    {anatomy.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Basic Tabs */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Basic Tabs</h2>
@@ -169,7 +209,7 @@ const TabsPage = () => {
               <CardDescription>Tabs with filled backgrounds for high contrast interfaces</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="bg-[#1e293b] p-1 rounded-lg">
+              <div className="bg-slate-800 p-1 rounded-lg">
                 <div className="flex space-x-1">
                   {["Tab Active", "Tab Inactive", "Tab Inactive"].map((tab, index) => (
                     <button
@@ -199,7 +239,7 @@ const TabsPage = () => {
               <CardDescription>Vertical tab layout for sidebar or narrow layouts</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="border-2 border-dashed border-[#7C3AED] p-6 rounded-lg">
+              <div className="border-2 border-dashed border-purple-500 p-6 rounded-lg">
                 <div className="flex flex-col space-y-2">
                   <button
                     onClick={() => setActiveVerticalTab("tab1")}
@@ -283,23 +323,23 @@ const TabsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
-                <CardTitle className="text-[#1E774A]">Do</CardTitle>
+                <CardTitle className="text-green-600">Do</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-[#1E774A] rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
                   <span className="text-sm">Use tabs to organize related content</span>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-[#1E774A] rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
                   <span className="text-sm">Keep tab labels concise and descriptive</span>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-[#1E774A] rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
                   <span className="text-sm">Make active state clearly distinguishable</span>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-[#1E774A] rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-green-600 rounded-full mt-2"></div>
                   <span className="text-sm">Provide consistent spacing between tabs</span>
                 </div>
               </CardContent>
@@ -366,7 +406,7 @@ const TabsPage = () => {
       </div>
 
       {/* Footer */}
-      <div className="bg-[#0C0F24] text-white mt-20">
+      <div className="bg-slate-900 text-white mt-20">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
