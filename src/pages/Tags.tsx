@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowLeft, Tag, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -27,7 +26,7 @@ const Tags = () => {
       example: "General",
       bgColor: "bg-slate-100",
       textColor: "text-slate-700",
-      code: `<Badge variant="secondary" className="bg-slate-100 text-slate-700">General</Badge>`
+      code: `<Badge variant="secondary" className="bg-slate-100 text-slate-700 rounded">General</Badge>`
     },
     {
       id: 2,
@@ -38,7 +37,7 @@ const Tags = () => {
       example: "Updated",
       bgColor: "bg-blue-100",
       textColor: "text-blue-700",
-      code: `<Badge variant="secondary" className="bg-blue-100 text-blue-700">Updated</Badge>`
+      code: `<Badge variant="secondary" className="bg-blue-100 text-blue-700 rounded">Updated</Badge>`
     },
     {
       id: 3,
@@ -49,7 +48,7 @@ const Tags = () => {
       example: "Deadline",
       bgColor: "bg-yellow-100",
       textColor: "text-yellow-700",
-      code: `<Badge variant="secondary" className="bg-yellow-100 text-yellow-700">Deadline</Badge>`
+      code: `<Badge variant="secondary" className="bg-yellow-100 text-yellow-700 rounded">Deadline</Badge>`
     },
     {
       id: 4,
@@ -60,7 +59,7 @@ const Tags = () => {
       example: "Completed",
       bgColor: "bg-green-100",
       textColor: "text-green-700",
-      code: `<Badge variant="secondary" className="bg-green-100 text-green-700">Completed</Badge>`
+      code: `<Badge variant="secondary" className="bg-green-100 text-green-700 rounded">Completed</Badge>`
     },
     {
       id: 5,
@@ -71,7 +70,7 @@ const Tags = () => {
       example: "Error",
       bgColor: "bg-amber-100",
       textColor: "text-amber-800",
-      code: `<Badge variant="secondary" className="bg-amber-100 text-amber-800">Error</Badge>`
+      code: `<Badge variant="secondary" className="bg-amber-100 text-amber-800 rounded">Error</Badge>`
     }
   ];
 
@@ -292,7 +291,7 @@ const Tags = () => {
                       </CardDescription>
                     </div>
                     <div className="flex items-center space-x-4">
-                      <Badge variant="secondary" className={`${variant.bgColor} ${variant.textColor}`}>
+                      <Badge variant="secondary" className={`${variant.bgColor} ${variant.textColor} rounded`}>
                         {variant.example}
                       </Badge>
                       <Button
@@ -347,13 +346,13 @@ const Tags = () => {
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-3">
-                <Badge variant="secondary" className="bg-slate-100 text-slate-700">Category</Badge>
-                <Badge variant="secondary" className="bg-blue-100 text-blue-700">Recently Updated</Badge>
-                <Badge variant="secondary" className="bg-green-100 text-green-700">Approved</Badge>
-                <Badge variant="secondary" className="bg-yellow-100 text-yellow-700">Pending Review</Badge>
-                <Badge variant="secondary" className="bg-amber-100 text-amber-800">Action Required</Badge>
-                <Badge variant="secondary" className="bg-slate-100 text-slate-700">Documentation</Badge>
-                <Badge variant="secondary" className="bg-green-100 text-green-700">Published</Badge>
+                <Badge variant="secondary" className="bg-slate-100 text-slate-700 rounded">Category</Badge>
+                <Badge variant="secondary" className="bg-blue-100 text-blue-700 rounded">Recently Updated</Badge>
+                <Badge variant="secondary" className="bg-green-100 text-green-700 rounded">Approved</Badge>
+                <Badge variant="secondary" className="bg-yellow-100 text-yellow-700 rounded">Pending Review</Badge>
+                <Badge variant="secondary" className="bg-amber-100 text-amber-800 rounded">Action Required</Badge>
+                <Badge variant="secondary" className="bg-slate-100 text-slate-700 rounded">Documentation</Badge>
+                <Badge variant="secondary" className="bg-green-100 text-green-700 rounded">Published</Badge>
               </div>
             </CardContent>
           </Card>
