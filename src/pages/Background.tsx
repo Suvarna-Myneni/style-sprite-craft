@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowLeft, Brush, Palette, Monitor, Smartphone, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -83,6 +82,18 @@ const Background = () => {
       name: "Deep Blue Crystals",
       image: "/lovable-uploads/62ace3ac-01aa-4173-8145-63dee27c9bd2.png",
       description: "Rich blue crystalline background for premium designs"
+    },
+    {
+      id: 3,
+      name: "Charcoal Geometric",
+      image: "/lovable-uploads/bed710f4-0e94-4743-84a5-daf21e5ccecd.png",
+      description: "Dark charcoal geometric pattern with sophisticated depth"
+    },
+    {
+      id: 4,
+      name: "Midnight Blue Angular",
+      image: "/lovable-uploads/3fa5ddb9-848e-4aee-b15f-8ea4619d3922.png",
+      description: "Deep midnight blue angular design for modern dark themes"
     }
   ];
 
