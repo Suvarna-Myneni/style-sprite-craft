@@ -1,5 +1,6 @@
 
 import React from "react";
+import { User, X } from "lucide-react";
 
 interface TagsComponentProps {
   size?: "tiny" | "base" | "large";
@@ -20,11 +21,30 @@ export const TagsComponent: React.FC<TagsComponentProps> = ({
   showRightIcon = true,
   children
 }) => {
+  const getIconSize = () => {
+    switch (size) {
+      case "tiny": return 10;
+      case "base": return 12;
+      case "large": return 14;
+      default: return 12;
+    }
+  };
+
+  const iconSize = getIconSize();
+
   return (
     <div className={`tag ${size} ${status} ${mode}`}>
-      {showLeftIcon && <span className="tag-icon-left">👤</span>}
+      {showLeftIcon && (
+        <span className="tag-icon-left">
+          <User size={iconSize} />
+        </span>
+      )}
       <span className="tag-label">{children || label}</span>
-      {showRightIcon && <span className="tag-icon-right">❌</span>}
+      {showRightIcon && (
+        <span className="tag-icon-right">
+          <X size={iconSize} />
+        </span>
+      )}
     </div>
   );
 };
