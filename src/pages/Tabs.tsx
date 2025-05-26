@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -385,16 +384,16 @@ const TabsPage = () => {
                   <h4 className="font-semibold mb-2">Desktop (≥768px)</h4>
                   <div className="border rounded-lg p-4 bg-gray-50">
                     <div className="flex space-x-4">
-                      <span className="px-6 py-2 bg-[#1B489B] text-white text-sm rounded">Personal Notifications (2)</span>
+                      <span className="px-6 py-2 bg-blue-600 text-white text-sm rounded">Personal Notifications (2)</span>
                       <span className="px-6 py-2 text-gray-600 text-sm">Group Notifications (0)</span>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Mobile (<768px)</h4>
+                  <h4 className="font-semibold mb-2">Mobile (&lt;768px)</h4>
                   <div className="border rounded-lg p-4 bg-gray-50">
                     <div className="flex flex-col space-y-2">
-                      <span className="px-4 py-3 bg-[#1B489B] text-white text-sm rounded text-center">Personal (2)</span>
+                      <span className="px-4 py-3 bg-blue-600 text-white text-sm rounded text-center">Personal (2)</span>
                       <span className="px-4 py-3 text-gray-600 text-sm text-center">Group (0)</span>
                     </div>
                   </div>
