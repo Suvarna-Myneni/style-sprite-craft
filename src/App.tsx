@@ -9,6 +9,7 @@ import Colors from "./pages/Colors";
 import Typography from "./pages/Typography";
 import Icons from "./pages/Icons";
 import Grids from "./pages/Grids";
+import Illustrations from "./pages/Illustrations";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/typography" element={<Typography />} />
           <Route path="/icons" element={<Icons />} />
           <Route path="/grids" element={<Grids />} />
+          <Route path="/illustrations" element={<Illustrations />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
