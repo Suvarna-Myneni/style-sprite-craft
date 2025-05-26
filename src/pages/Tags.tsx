@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Tag, Copy, Check } from "lucide-react";
+import { ArrowLeft, Tag, Copy, Check, User, Bell, Clock, CheckCircle, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -26,7 +26,10 @@ const Tags = () => {
       example: "General",
       bgColor: "bg-slate-100",
       textColor: "text-slate-700",
-      code: `<Badge variant="secondary" className="bg-slate-100 text-slate-700 rounded">General</Badge>`
+      code: `<Badge variant="secondary" className="bg-slate-100 text-slate-700 rounded">
+  <User className="w-3 h-3 mr-1" />
+  General
+</Badge>`
     },
     {
       id: 2,
@@ -37,7 +40,10 @@ const Tags = () => {
       example: "Updated",
       bgColor: "bg-blue-100",
       textColor: "text-blue-700",
-      code: `<Badge variant="secondary" className="bg-blue-100 text-blue-700 rounded">Updated</Badge>`
+      code: `<Badge variant="secondary" className="bg-blue-100 text-blue-700 rounded">
+  <Bell className="w-3 h-3 mr-1" />
+  Updated
+</Badge>`
     },
     {
       id: 3,
@@ -48,7 +54,10 @@ const Tags = () => {
       example: "Deadline",
       bgColor: "bg-yellow-100",
       textColor: "text-yellow-700",
-      code: `<Badge variant="secondary" className="bg-yellow-100 text-yellow-700 rounded">Deadline</Badge>`
+      code: `<Badge variant="secondary" className="bg-yellow-100 text-yellow-700 rounded">
+  <Clock className="w-3 h-3 mr-1" />
+  Deadline
+</Badge>`
     },
     {
       id: 4,
@@ -59,7 +68,10 @@ const Tags = () => {
       example: "Completed",
       bgColor: "bg-green-100",
       textColor: "text-green-700",
-      code: `<Badge variant="secondary" className="bg-green-100 text-green-700 rounded">Completed</Badge>`
+      code: `<Badge variant="secondary" className="bg-green-100 text-green-700 rounded">
+  <CheckCircle className="w-3 h-3 mr-1" />
+  Completed
+</Badge>`
     },
     {
       id: 5,
@@ -70,7 +82,10 @@ const Tags = () => {
       example: "Error",
       bgColor: "bg-amber-100",
       textColor: "text-amber-800",
-      code: `<Badge variant="secondary" className="bg-amber-100 text-amber-800 rounded">Error</Badge>`
+      code: `<Badge variant="secondary" className="bg-amber-100 text-amber-800 rounded">
+  <AlertTriangle className="w-3 h-3 mr-1" />
+  Error
+</Badge>`
     }
   ];
 
@@ -261,7 +276,8 @@ const Tags = () => {
                 <CardHeader>
                   <CardTitle className="text-xl">{size.name}</CardTitle>
                   <div className="flex justify-center mt-4">
-                    <Badge variant="secondary" className={`${size.className} bg-slate-100 text-slate-700`}>
+                    <Badge variant="secondary" className={`${size.className} bg-slate-100 text-slate-700 rounded flex items-center`}>
+                      <User className="w-3 h-3 mr-1" />
                       {size.example}
                     </Badge>
                   </div>
@@ -280,57 +296,61 @@ const Tags = () => {
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Tag Variants</h2>
           <div className="space-y-8">
-            {tagVariants.map((variant) => (
-              <Card key={variant.id}>
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <CardTitle className="text-xl text-[#1B489B]">{variant.name}</CardTitle>
-                      <CardDescription className="mt-2">
-                        <strong>Purpose:</strong> {variant.purpose}
-                      </CardDescription>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <Badge variant="secondary" className={`${variant.bgColor} ${variant.textColor} rounded`}>
-                        {variant.example}
-                      </Badge>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => copyToClipboard(variant.code, variant.name)}
-                        className="flex items-center space-x-2"
-                      >
-                        {copiedCode === variant.name ? (
-                          <Check className="h-4 w-4" />
-                        ) : (
-                          <Copy className="h-4 w-4" />
-                        )}
-                        <span>{copiedCode === variant.name ? "Copied!" : "Copy Code"}</span>
-                      </Button>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Color</h4>
-                      <p className="text-sm text-gray-600 mb-4">{variant.color}</p>
-                      
-                      <h4 className="font-semibold text-gray-900 mb-2">When to Use</h4>
-                      <p className="text-sm text-gray-600">{variant.usage}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Code Example</h4>
-                      <div className="bg-gray-100 rounded-lg p-4">
-                        <code className="text-sm text-gray-800 break-all">
-                          {variant.code}
-                        </code>
+            {tagVariants.map((variant, index) => {
+              const IconComponent = [User, Bell, Clock, CheckCircle, AlertTriangle][index];
+              return (
+                <Card key={variant.id}>
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <CardTitle className="text-xl text-[#1B489B]">{variant.name}</CardTitle>
+                        <CardDescription className="mt-2">
+                          <strong>Purpose:</strong> {variant.purpose}
+                        </CardDescription>
+                      </div>
+                      <div className="flex items-center space-x-4">
+                        <Badge variant="secondary" className={`${variant.bgColor} ${variant.textColor} rounded flex items-center`}>
+                          <IconComponent className="w-3 h-3 mr-1" />
+                          {variant.example}
+                        </Badge>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => copyToClipboard(variant.code, variant.name)}
+                          className="flex items-center space-x-2"
+                        >
+                          {copiedCode === variant.name ? (
+                            <Check className="h-4 w-4" />
+                          ) : (
+                            <Copy className="h-4 w-4" />
+                          )}
+                          <span>{copiedCode === variant.name ? "Copied!" : "Copy Code"}</span>
+                        </Button>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Color</h4>
+                        <p className="text-sm text-gray-600 mb-4">{variant.color}</p>
+                        
+                        <h4 className="font-semibold text-gray-900 mb-2">When to Use</h4>
+                        <p className="text-sm text-gray-600">{variant.usage}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Code Example</h4>
+                        <div className="bg-gray-100 rounded-lg p-4">
+                          <code className="text-sm text-gray-800 break-all">
+                            {variant.code}
+                          </code>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
 
@@ -346,13 +366,34 @@ const Tags = () => {
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-3">
-                <Badge variant="secondary" className="bg-slate-100 text-slate-700 rounded">Category</Badge>
-                <Badge variant="secondary" className="bg-blue-100 text-blue-700 rounded">Recently Updated</Badge>
-                <Badge variant="secondary" className="bg-green-100 text-green-700 rounded">Approved</Badge>
-                <Badge variant="secondary" className="bg-yellow-100 text-yellow-700 rounded">Pending Review</Badge>
-                <Badge variant="secondary" className="bg-amber-100 text-amber-800 rounded">Action Required</Badge>
-                <Badge variant="secondary" className="bg-slate-100 text-slate-700 rounded">Documentation</Badge>
-                <Badge variant="secondary" className="bg-green-100 text-green-700 rounded">Published</Badge>
+                <Badge variant="secondary" className="bg-slate-100 text-slate-700 rounded flex items-center">
+                  <User className="w-3 h-3 mr-1" />
+                  Category
+                </Badge>
+                <Badge variant="secondary" className="bg-blue-100 text-blue-700 rounded flex items-center">
+                  <Bell className="w-3 h-3 mr-1" />
+                  Recently Updated
+                </Badge>
+                <Badge variant="secondary" className="bg-green-100 text-green-700 rounded flex items-center">
+                  <CheckCircle className="w-3 h-3 mr-1" />
+                  Approved
+                </Badge>
+                <Badge variant="secondary" className="bg-yellow-100 text-yellow-700 rounded flex items-center">
+                  <Clock className="w-3 h-3 mr-1" />
+                  Pending Review
+                </Badge>
+                <Badge variant="secondary" className="bg-amber-100 text-amber-800 rounded flex items-center">
+                  <AlertTriangle className="w-3 h-3 mr-1" />
+                  Action Required
+                </Badge>
+                <Badge variant="secondary" className="bg-slate-100 text-slate-700 rounded flex items-center">
+                  <Tag className="w-3 h-3 mr-1" />
+                  Documentation
+                </Badge>
+                <Badge variant="secondary" className="bg-green-100 text-green-700 rounded flex items-center">
+                  <CheckCircle className="w-3 h-3 mr-1" />
+                  Published
+                </Badge>
               </div>
             </CardContent>
           </Card>
