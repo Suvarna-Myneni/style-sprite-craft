@@ -1,0 +1,136 @@
+
+.tags-component {
+  align-items: center;
+  border-radius: 4px;
+  display: inline-flex;
+  gap: 4px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+}
+
+.tags-component .tags-left-icon {
+  position: relative;
+}
+
+.tags-component .tags-right-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.tags-component .tags-text-wrapper {
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+/* Size variants */
+.tags-component.base {
+  padding: 2px 6px;
+}
+
+.tags-component.large {
+  padding: 4px 8px;
+}
+
+.tags-component.tiny {
+  padding: 2px 6px;
+}
+
+/* Background colors */
+.tags-component.dark.default {
+  background-color: #3d3f50;
+}
+
+.tags-component.warning.light {
+  background-color: #ffe0a3;
+}
+
+.tags-component.dark.success {
+  background-color: #1e774a;
+}
+
+.tags-component.dark.warning {
+  background-color: #895d0b;
+}
+
+.tags-component.default.light {
+  background-color: #e9ecf4;
+}
+
+.tags-component.primary.light {
+  background-color: #d4daea;
+}
+
+.tags-component.primary.dark {
+  background-color: #0c0f24;
+}
+
+.tags-component.light.success {
+  background-color: #ccf2db;
+}
+
+/* Typography */
+.tags-component.base .tags-text-wrapper {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.tags-component.large .tags-text-wrapper {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.tags-component.tiny .tags-text-wrapper {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+}
+
+/* Text colors */
+.tags-component.warning.light .tags-text-wrapper {
+  color: #895d0b;
+}
+
+.tags-component.dark.success .tags-text-wrapper {
+  color: #ccf2db;
+}
+
+.tags-component.dark.warning .tags-text-wrapper {
+  color: #ffe0a3;
+}
+
+.tags-component.default.light .tags-text-wrapper {
+  color: #3d3f50;
+}
+
+.tags-component.primary.light .tags-text-wrapper {
+  color: #0c0f24;
+}
+
+.tags-component.primary.dark .tags-text-wrapper {
+  color: #e9ecf4;
+}
+
+.tags-component.light.success .tags-text-wrapper {
+  color: #1e774a;
+}
+
+.tags-component.dark.default.tiny .tags-text-wrapper {
+  color: #e9ecf4;
+}
+
+.tags-component.dark.default.large .tags-text-wrapper {
+  color: #e7e7e9;
+}
+
+.tags-component.dark.default.base .tags-text-wrapper {
+  color: #e9ecf4;
+}

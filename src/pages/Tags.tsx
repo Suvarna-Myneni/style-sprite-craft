@@ -1,10 +1,11 @@
-
 import { Link } from "react-router-dom";
 import { ArrowLeft, Tag, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import { TagsComponent } from "@/components/tags/TagsComponent";
+import "@/components/tags/tags-component.css";
 
 const Tags = () => {
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
@@ -153,6 +154,81 @@ const Tags = () => {
                 Tags are used to categorize, label, or provide contextual information about specific content or user actions. 
                 They help in organizing content, notifying users, and drawing attention to important actions or statuses.
               </CardDescription>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Design System Tags Component Examples */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Design System Tags Component</h2>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-xl">Interactive Tags with Icons</CardTitle>
+              <CardDescription>
+                Advanced tag component with customizable icons, sizes, modes, and statuses
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-8">
+                {/* Size Examples */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-4">Sizes</h4>
+                  <div className="flex flex-wrap gap-4 items-center">
+                    <TagsComponent size="tiny" status="default" mode="light">Tiny</TagsComponent>
+                    <TagsComponent size="base" status="default" mode="light">Base</TagsComponent>
+                    <TagsComponent size="large" status="default" mode="light">Large</TagsComponent>
+                  </div>
+                </div>
+
+                {/* Status Examples - Light Mode */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-4">Light Mode Variants</h4>
+                  <div className="flex flex-wrap gap-4 items-center">
+                    <TagsComponent status="default" mode="light">Default</TagsComponent>
+                    <TagsComponent status="primary" mode="light">Primary</TagsComponent>
+                    <TagsComponent status="warning" mode="light">Warning</TagsComponent>
+                    <TagsComponent status="success" mode="light">Success</TagsComponent>
+                  </div>
+                </div>
+
+                {/* Status Examples - Dark Mode */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-4">Dark Mode Variants</h4>
+                  <div className="flex flex-wrap gap-4 items-center">
+                    <TagsComponent status="default" mode="dark">Default</TagsComponent>
+                    <TagsComponent status="primary" mode="dark">Primary</TagsComponent>
+                    <TagsComponent status="warning" mode="dark">Warning</TagsComponent>
+                    <TagsComponent status="success" mode="dark">Success</TagsComponent>
+                  </div>
+                </div>
+
+                {/* Configuration Examples */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-4">Configuration Options</h4>
+                  <div className="flex flex-wrap gap-4 items-center">
+                    <TagsComponent showLeftIcon={false} status="success" mode="light">No Left Icon</TagsComponent>
+                    <TagsComponent showRightIcon={false} status="warning" mode="light">No Right Icon</TagsComponent>
+                    <TagsComponent showLeftIcon={false} showRightIcon={false} status="primary" mode="light">Text Only</TagsComponent>
+                  </div>
+                </div>
+
+                {/* Code Example */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Usage Example</h4>
+                  <div className="bg-gray-100 rounded-lg p-4">
+                    <code className="text-sm text-gray-800">
+                      {`<TagsComponent
+  className="status-success-size-6"
+  mode="dark"
+  size="large"
+  status="success"
+>
+  Custom Label
+</TagsComponent>`}
+                    </code>
+                  </div>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
