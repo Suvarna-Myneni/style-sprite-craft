@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,7 +13,8 @@ import {
   Brush,
   Target,
   Users,
-  Zap
+  Zap,
+  Tag
 } from "lucide-react";
 
 const Index = () => {
@@ -39,6 +39,13 @@ const Index = () => {
       icon: Layers,
       path: "/icons",
       color: "bg-[#895D0B]"
+    },
+    {
+      title: "Tags",
+      description: "Categorization labels and contextual information components",
+      icon: Tag,
+      path: "/tags",
+      color: "bg-[#7C3AED]"
     },
     {
       title: "Grids",
@@ -247,7 +254,7 @@ const Index = () => {
             <div className="text-sm text-gray-600">Icons Available</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-[#496DAF]">100%</div>
+            <div className="text-3xl font-bold text-[#7C3AED]">100%</div>
             <div className="text-sm text-gray-600">Accessibility</div>
           </div>
         </div>
