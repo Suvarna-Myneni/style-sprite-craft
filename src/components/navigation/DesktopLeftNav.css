@@ -1,0 +1,34 @@
+
+.desktop-left-nav {
+  width: 240px;
+  background-color: #0c0f24;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.nav-logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-item {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  background-color: #1c1f36;
+}

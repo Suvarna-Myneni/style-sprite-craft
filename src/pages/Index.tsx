@@ -15,7 +15,8 @@ import {
   Users,
   Zap,
   Tag,
-  Layers as TabsIcon
+  Layers as TabsIcon,
+  Navigation as NavigationIcon
 } from "lucide-react";
 
 const Index = () => {
@@ -54,6 +55,13 @@ const Index = () => {
       icon: TabsIcon,
       path: "/tabs",
       color: "bg-[#DC2626]"
+    },
+    {
+      title: "Navigation",
+      description: "Navigation patterns and components for application structure",
+      icon: NavigationIcon,
+      path: "/navigation",
+      color: "bg-[#0c0f24]"
     },
     {
       title: "Grids",

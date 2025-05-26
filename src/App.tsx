@@ -13,6 +13,7 @@ import Illustrations from "./pages/Illustrations";
 import Background from "./pages/Background";
 import Tags from "./pages/Tags";
 import TabsPage from "./pages/Tabs";
+import Navigation from "./pages/Navigation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/background" element={<Background />} />
           <Route path="/tags" element={<Tags />} />
           <Route path="/tabs" element={<TabsPage />} />
+          <Route path="/navigation" element={<Navigation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
