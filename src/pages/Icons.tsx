@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { ArrowLeft, Search, Copy } from "lucide-react";
+import { ArrowLeft, Search, Copy, Home, Star, Trash2, CheckCircle, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
