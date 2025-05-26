@@ -1,163 +1,29 @@
-.tags-component {
-  align-items: center;
-  border-radius: 4px;
+
+.tag {
   display: inline-flex;
-  gap: 4px;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  font-family: 'Roboto', sans-serif;
-}
-
-.tags-component .tags-left-icon {
-  position: relative;
-}
-
-.tags-component .tags-right-icon {
-  position: relative;
-  cursor: pointer;
-}
-
-.tags-component .tags-text-wrapper {
-  position: relative;
-  text-align: center;
-  white-space: nowrap;
-  width: fit-content;
-}
-
-/* Size variants - matching your exact dimensions */
-.tags-component.base {
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-.tags-component.large {
+  align-items: center;
   padding: 4px 8px;
   border-radius: 4px;
-}
-
-.tags-component.tiny {
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-/* Icon sizing to match your specifications */
-.tags-component.tiny .tags-left-icon,
-.tags-component.tiny .tags-right-icon {
-  height: 12px;
-  width: 12px;
-}
-
-.tags-component.base .tags-left-icon,
-.tags-component.base .tags-right-icon {
-  height: 14px;
-  width: 14px;
-}
-
-.tags-component.large .tags-left-icon,
-.tags-component.large .tags-right-icon {
-  height: 16px;
-  width: 16px;
-}
-
-/* Background colors */
-.tags-component.dark.default {
-  background-color: #3d3f50;
-}
-
-.tags-component.warning.light {
-  background-color: #ffe0a3;
-}
-
-.tags-component.dark.success {
-  background-color: #1e774a;
-}
-
-.tags-component.dark.warning {
-  background-color: #895d0b;
-}
-
-.tags-component.default.light {
-  background-color: #e9ecf4;
-}
-
-.tags-component.primary.light {
-  background-color: #d4daea;
-}
-
-.tags-component.primary.dark {
-  background-color: #0c0f24;
-}
-
-.tags-component.light.success {
-  background-color: #ccf2db;
-}
-
-/* Typography - exact font specifications from your styleguide */
-.tags-component.base .tags-text-wrapper {
-  font-size: 14px;
+  gap: 6px;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0px;
-  font-family: 'Roboto', Helvetica;
-  font-style: normal;
 }
 
-.tags-component.large .tags-text-wrapper {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0px;
-  font-family: 'Roboto', Helvetica;
-  font-style: normal;
-}
+.tag.tiny { font-size: 12px; }
+.tag.base { font-size: 14px; }
+.tag.large { font-size: 16px; }
 
-.tags-component.tiny .tags-text-wrapper {
+.tag.light.default { background: #e9ecf4; color: #3d3f50; }
+.tag.light.success { background: #ccf2db; color: #1e774a; }
+.tag.light.warning { background: #ffe0a3; color: #895d0b; }
+.tag.light.primary { background: #d4daea; color: #0c0f24; }
+
+.tag.dark.default { background: #3d3f50; color: #e9ecf4; }
+.tag.dark.success { background: #1e774a; color: #ccf2db; }
+.tag.dark.warning { background: #895d0b; color: #ffe1a4; }
+.tag.dark.primary { background: #0c0f24; color: #e9ecf4; }
+
+.tag-icon-left,
+.tag-icon-right {
   font-size: 12px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0px;
-  font-family: 'Roboto', Helvetica;
-  font-style: normal;
-}
-
-/* Text colors */
-.tags-component.warning.light .tags-text-wrapper {
-  color: #895d0b;
-}
-
-.tags-component.dark.success .tags-text-wrapper {
-  color: #ccf2db;
-}
-
-.tags-component.dark.warning .tags-text-wrapper {
-  color: #ffe0a3;
-}
-
-.tags-component.default.light .tags-text-wrapper {
-  color: #3d3f50;
-}
-
-.tags-component.primary.light .tags-text-wrapper {
-  color: #0c0f24;
-}
-
-.tags-component.primary.dark .tags-text-wrapper {
-  color: #e9ecf4;
-}
-
-.tags-component.light.success .tags-text-wrapper {
-  color: #1e774a;
-}
-
-.tags-component.dark.default.tiny .tags-text-wrapper {
-  color: #e9ecf4;
-}
-
-.tags-component.dark.default.large .tags-text-wrapper {
-  color: #e7e7e9;
-}
-
-.tags-component.dark.default.base .tags-text-wrapper {
-  color: #e9ecf4;
 }
