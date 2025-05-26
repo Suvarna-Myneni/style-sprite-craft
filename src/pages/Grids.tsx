@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowLeft, Monitor, Smartphone, Grid3X3, Layout } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -64,11 +63,11 @@ const Grids = () => {
               {/* Desktop Grid Image */}
               <div className="bg-gray-50 p-6 rounded-lg border-2 border-dashed border-gray-200">
                 <img 
-                  src="/placeholder.svg" 
-                  alt="Desktop Grid System - 12 Column Layout"
-                  className="w-full h-80 object-contain bg-white rounded shadow-sm"
+                  src="/lovable-uploads/3b22ef37-2b43-4865-8047-79684460485d.png" 
+                  alt="Desktop Grid System - 12 Column Layout with container width 1192px, 72px columns, 24px gutters, and 32px margins"
+                  className="w-full h-auto object-contain bg-white rounded shadow-sm"
                 />
-                <p className="text-center text-sm text-gray-500 mt-2">Desktop Grid Structure - 12 Columns with 24px Gutters</p>
+                <p className="text-center text-sm text-gray-500 mt-2">Desktop Grid Structure - 12 Columns with 24px Gutters, 1192px Container</p>
               </div>
 
               {/* Desktop Specifications */}
@@ -110,11 +109,11 @@ const Grids = () => {
               <div className="bg-gray-50 p-6 rounded-lg border-2 border-dashed border-gray-200 flex justify-center">
                 <div className="max-w-sm">
                   <img 
-                    src="/placeholder.svg" 
-                    alt="Mobile Grid System - 4 Column Layout"
-                    className="w-full h-96 object-contain bg-white rounded shadow-sm"
+                    src="/lovable-uploads/9a0e531d-c9a5-4591-a3a4-d6e1bf00a3f2.png" 
+                    alt="Mobile Grid System - 4 Column Layout with 88px header, 16px margins, and responsive design"
+                    className="w-full h-auto object-contain bg-white rounded shadow-sm"
                   />
-                  <p className="text-center text-sm text-gray-500 mt-2">Mobile Grid Structure - 4 Columns with 16px Gutters</p>
+                  <p className="text-center text-sm text-gray-500 mt-2">Mobile Grid Structure - 4 Columns with 16px Margins</p>
                 </div>
               </div>
 
