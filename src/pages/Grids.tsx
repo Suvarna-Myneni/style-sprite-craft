@@ -48,6 +48,98 @@ const Grids = () => {
           </CardContent>
         </Card>
 
+        {/* Desktop Grid System with Image */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <Monitor className="w-5 h-5 mr-2" />
+              Desktop Grid System
+            </CardTitle>
+            <CardDescription>
+              12-column grid system optimized for desktop layouts with a maximum container width of 1192px
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              {/* Desktop Grid Image */}
+              <div className="bg-gray-50 p-6 rounded-lg border-2 border-dashed border-gray-200">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Desktop Grid System - 12 Column Layout"
+                  className="w-full h-80 object-contain bg-white rounded shadow-sm"
+                />
+                <p className="text-center text-sm text-gray-500 mt-2">Desktop Grid Structure - 12 Columns with 24px Gutters</p>
+              </div>
+
+              {/* Desktop Specifications */}
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-blue-900 mb-2">Container</h5>
+                  <p className="text-sm text-blue-700">Max width: 1192px</p>
+                  <p className="text-sm text-blue-700">Margin: Auto center</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-green-900 mb-2">Columns</h5>
+                  <p className="text-sm text-green-700">Count: 12 columns</p>
+                  <p className="text-sm text-green-700">Width: 72px each</p>
+                </div>
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-purple-900 mb-2">Gutters</h5>
+                  <p className="text-sm text-purple-700">Size: 24px between columns</p>
+                  <p className="text-sm text-purple-700">Outer margins: 32px</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Mobile Grid System with Image */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="flex items-center">
+              <Smartphone className="w-5 h-5 mr-2" />
+              Mobile Grid System
+            </CardTitle>
+            <CardDescription>
+              Responsive 4-column grid system optimized for mobile devices with adaptive spacing
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              {/* Mobile Grid Image */}
+              <div className="bg-gray-50 p-6 rounded-lg border-2 border-dashed border-gray-200 flex justify-center">
+                <div className="max-w-sm">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Mobile Grid System - 4 Column Layout"
+                    className="w-full h-96 object-contain bg-white rounded shadow-sm"
+                  />
+                  <p className="text-center text-sm text-gray-500 mt-2">Mobile Grid Structure - 4 Columns with 16px Gutters</p>
+                </div>
+              </div>
+
+              {/* Mobile Specifications */}
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-blue-900 mb-2">Container</h5>
+                  <p className="text-sm text-blue-700">Full width with margins</p>
+                  <p className="text-sm text-blue-700">Responsive padding</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-green-900 mb-2">Columns</h5>
+                  <p className="text-sm text-green-700">Count: 4 columns</p>
+                  <p className="text-sm text-green-700">Fluid width</p>
+                </div>
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <h5 className="font-semibold text-purple-900 mb-2">Gutters</h5>
+                  <p className="text-sm text-purple-700">Size: 16px between columns</p>
+                  <p className="text-sm text-purple-700">Outer margins: 16px</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Principles */}
         <Card className="mb-8">
           <CardHeader>
@@ -74,121 +166,6 @@ const Grids = () => {
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">Responsiveness</h4>
                 <p className="text-sm text-gray-600">Adapts to different device sizes, ensuring layouts scale and reflow properly across mobile, tablet, and desktop devices.</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Desktop Grid System */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle className="flex items-center">
-              <Monitor className="w-5 h-5 mr-2" />
-              Desktop Grid System
-            </CardTitle>
-            <CardDescription>
-              12-column grid system optimized for desktop layouts with a maximum container width of 1192px
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-6">
-              {/* Desktop Grid Visualization */}
-              <div className="bg-gray-100 p-6 rounded-lg">
-                <div className="text-center mb-4">
-                  <h4 className="font-semibold text-gray-700">Header - 80px</h4>
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <div className="bg-gray-400 text-white text-xs p-2 rounded flex items-center justify-center" style={{ width: '248px', height: '60px' }}>
-                    Left Nav<br />248px
-                  </div>
-                  <div className="flex-1 bg-gray-200 p-2 rounded">
-                    <div className="text-center text-sm text-gray-600 mb-2">Container - 1192px</div>
-                    <div className="grid grid-cols-12 gap-2">
-                      {Array.from({ length: 12 }, (_, i) => (
-                        <div key={i} className="bg-white h-16 rounded flex items-center justify-center text-xs text-gray-600">
-                          {i === 0 && '32'}
-                          {i === 1 && '72'}
-                          {i === 2 && '24'}
-                          {i === 11 && '32'}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Desktop Specifications */}
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <h5 className="font-semibold text-blue-900 mb-2">Container</h5>
-                  <p className="text-sm text-blue-700">Max width: 1192px</p>
-                  <p className="text-sm text-blue-700">Margin: Auto center</p>
-                </div>
-                <div className="bg-green-50 p-4 rounded-lg">
-                  <h5 className="font-semibold text-green-900 mb-2">Columns</h5>
-                  <p className="text-sm text-green-700">Count: 12 columns</p>
-                  <p className="text-sm text-green-700">Width: 72px each</p>
-                </div>
-                <div className="bg-purple-50 p-4 rounded-lg">
-                  <h5 className="font-semibold text-purple-900 mb-2">Gutters</h5>
-                  <p className="text-sm text-purple-700">Size: 24px between columns</p>
-                  <p className="text-sm text-purple-700">Outer margins: 32px</p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Mobile Grid System */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle className="flex items-center">
-              <Smartphone className="w-5 h-5 mr-2" />
-              Mobile Grid System
-            </CardTitle>
-            <CardDescription>
-              Responsive 4-column grid system optimized for mobile devices with adaptive spacing
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-6">
-              {/* Mobile Grid Visualization */}
-              <div className="bg-gray-100 p-4 rounded-lg max-w-md mx-auto">
-                <div className="text-center mb-4">
-                  <h4 className="font-semibold text-gray-700">Header - 88px</h4>
-                </div>
-                <div className="space-y-4">
-                  <div className="grid grid-cols-4 gap-2">
-                    {Array.from({ length: 4 }, (_, i) => (
-                      <div key={i} className="bg-white h-24 rounded flex items-center justify-center text-xs text-gray-600">
-                        {i === 0 && '16'}
-                        {i === 3 && '16'}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="text-center">
-                    <h4 className="font-semibold text-gray-700">Bottom Nav - 88px</h4>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mobile Specifications */}
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <h5 className="font-semibold text-blue-900 mb-2">Container</h5>
-                  <p className="text-sm text-blue-700">Full width with margins</p>
-                  <p className="text-sm text-blue-700">Responsive padding</p>
-                </div>
-                <div className="bg-green-50 p-4 rounded-lg">
-                  <h5 className="font-semibold text-green-900 mb-2">Columns</h5>
-                  <p className="text-sm text-green-700">Count: 4 columns</p>
-                  <p className="text-sm text-green-700">Fluid width</p>
-                </div>
-                <div className="bg-purple-50 p-4 rounded-lg">
-                  <h5 className="font-semibold text-purple-900 mb-2">Gutters</h5>
-                  <p className="text-sm text-purple-700">Size: 16px between columns</p>
-                  <p className="text-sm text-purple-700">Outer margins: 16px</p>
-                </div>
               </div>
             </div>
           </CardContent>
