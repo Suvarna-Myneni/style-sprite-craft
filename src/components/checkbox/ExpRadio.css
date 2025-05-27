@@ -1,0 +1,60 @@
+
+.exp-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #303030;
+}
+
+.exp-radio .radio-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #303030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-radio.selected .radio-circle {
+  border: 1px solid #1B489B;
+}
+
+.exp-radio.selected .dot {
+  width: 10px;
+  height: 10px;
+  background: #1B489B;
+  border-radius: 50%;
+}
+
+.exp-radio.disabled {
+  cursor: not-allowed;
+  color: #858791;
+}
+
+.exp-radio.disabled .radio-circle {
+  border: 1px solid #CECFD3;
+}
+
+.exp-radio.disabled.selected .dot {
+  background: #CECFD3;
+}
+
+.exp-radio.dark {
+  color: #FFFFFF;
+}
+
+.exp-radio.dark .radio-circle {
+  border: 1px solid #FFFFFF;
+}
+
+.exp-radio.dark.selected .dot {
+  background: #FFFFFF;
+}
+
+.exp-radio.error .radio-circle {
+  border: 1px solid red;
+}
