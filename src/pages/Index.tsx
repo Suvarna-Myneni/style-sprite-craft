@@ -43,6 +43,13 @@ const Index = () => {
       color: "bg-[#895D0B]"
     },
     {
+      title: "Buttons",
+      description: "Interactive elements with various styles, sizes, and states",
+      icon: Target,
+      path: "/buttons",
+      color: "bg-[#1B489B]"
+    },
+    {
       title: "Tags",
       description: "Categorization labels and contextual information components",
       icon: Tag,
