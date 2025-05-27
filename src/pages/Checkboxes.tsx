@@ -11,6 +11,15 @@ const Checkboxes = () => {
   const [radioValue, setRadioValue] = useState("option1");
   const [radioValue2, setRadioValue2] = useState("payment1");
 
+  // Wrapper functions to handle type conversion
+  const handleRadioChange = (value: string | number) => {
+    setRadioValue(String(value));
+  };
+
+  const handleRadioChange2 = (value: string | number) => {
+    setRadioValue2(String(value));
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Header */}
@@ -78,19 +87,19 @@ const Checkboxes = () => {
                     label="Option 1"
                     value="option1"
                     groupValue={radioValue}
-                    onChange={setRadioValue}
+                    onChange={handleRadioChange}
                   />
                   <ExpRadio
                     label="Option 2"
                     value="option2"
                     groupValue={radioValue}
-                    onChange={setRadioValue}
+                    onChange={handleRadioChange}
                   />
                   <ExpRadio
                     label="Option 3"
                     value="option3"
                     groupValue={radioValue}
-                    onChange={setRadioValue}
+                    onChange={handleRadioChange}
                   />
                 </div>
               </div>
@@ -149,19 +158,19 @@ const Checkboxes = () => {
                     label="Credit Card"
                     value="payment1"
                     groupValue={radioValue2}
-                    onChange={setRadioValue2}
+                    onChange={handleRadioChange2}
                   />
                   <ExpRadio
                     label="PayPal"
                     value="payment2"
                     groupValue={radioValue2}
-                    onChange={setRadioValue2}
+                    onChange={handleRadioChange2}
                   />
                   <ExpRadio
                     label="Bank Transfer"
                     value="payment3"
                     groupValue={radioValue2}
-                    onChange={setRadioValue2}
+                    onChange={handleRadioChange2}
                   />
                 </div>
               </div>
