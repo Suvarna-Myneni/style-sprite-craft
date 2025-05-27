@@ -1,0 +1,67 @@
+
+.exp-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0C0F24;
+}
+
+.exp-checkbox .box {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #0C0F24;
+  border-radius: 4px;
+  position: relative;
+  background-color: white;
+}
+
+.exp-checkbox.checked .box {
+  background-color: #1B489B;
+  border: none;
+}
+
+.exp-checkbox.checked .tick {
+  width: 10px;
+  height: 8px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.exp-checkbox.intermediate .dash {
+  width: 10px;
+  height: 2px;
+  background-color: #1B489B;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.exp-checkbox.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.exp-checkbox.dark {
+  color: #ffffff;
+}
+
+.exp-checkbox.dark .box {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+}
+
+.exp-checkbox.checked.dark .box {
+  background-color: #ffffff;
+}
+
+.exp-checkbox.checked.dark .tick {
+  background-color: #0C0F24;
+}
