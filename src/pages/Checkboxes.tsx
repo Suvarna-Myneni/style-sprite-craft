@@ -1,5 +1,7 @@
-
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { ExpCheckbox } from "@/components/checkbox/ExpCheckbox";
 import { ExpRadio } from "@/components/checkbox/ExpRadio";
 import { CheckboxTile } from "@/components/checkbox/CheckboxTile";
@@ -34,13 +36,37 @@ const Checkboxes = () => {
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-4xl font-bold text-gray-900">Checkboxes & Radio Buttons</h1>
-              <p className="text-lg text-gray-600 mt-2">Custom checkbox and radio button components for form inputs</p>
+            <div className="flex items-center space-x-4">
+              <Link to="/">
+                <Button variant="ghost" size="sm">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back to Design System
+                </Button>
+              </Link>
+              <div>
+                <h1 className="text-4xl font-bold text-gray-900">Checkboxes & Radio Buttons</h1>
+                <p className="text-lg text-gray-600 mt-2">Custom checkbox and radio button components for form inputs</p>
+              </div>
             </div>
-            <Badge variant="secondary" className="text-sm px-4 py-2">
-              Component
-            </Badge>
+            <div className="flex items-center space-x-2">
+              <Badge variant="secondary" className="text-sm px-4 py-2">
+                Component
+              </Badge>
+              <div className="flex items-center space-x-2 ml-4">
+                <Link to="/buttons">
+                  <Button variant="outline" size="sm">
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    Buttons
+                  </Button>
+                </Link>
+                <Link to="/navigation">
+                  <Button variant="outline" size="sm">
+                    Navigation
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

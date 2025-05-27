@@ -1,4 +1,6 @@
-
+import { Link } from "react-router-dom";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { DesktopLeftNav } from "@/components/navigation/DesktopLeftNav";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,17 +14,41 @@ const Navigation = () => {
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 rounded-lg bg-[#0c0f24] flex items-center justify-center">
-                <NavigationIcon className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-4xl font-bold text-gray-900">Navigation</h1>
-                <p className="text-lg text-gray-600 mt-2">Navigation components and patterns</p>
+              <Link to="/">
+                <Button variant="ghost" size="sm">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back to Design System
+                </Button>
+              </Link>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 rounded-lg bg-[#0c0f24] flex items-center justify-center">
+                  <NavigationIcon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-4xl font-bold text-gray-900">Navigation</h1>
+                  <p className="text-lg text-gray-600 mt-2">Navigation components and patterns</p>
+                </div>
               </div>
             </div>
-            <Badge variant="secondary" className="text-sm px-4 py-2">
-              Components
-            </Badge>
+            <div className="flex items-center space-x-2">
+              <Badge variant="secondary" className="text-sm px-4 py-2">
+                Components
+              </Badge>
+              <div className="flex items-center space-x-2 ml-4">
+                <Link to="/checkboxes">
+                  <Button variant="outline" size="sm">
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    Checkboxes
+                  </Button>
+                </Link>
+                <Link to="/colors">
+                  <Button variant="outline" size="sm">
+                    Colors
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
