@@ -2,14 +2,22 @@
 import React, { useState } from "react";
 import { ExpCheckbox } from "@/components/checkbox/ExpCheckbox";
 import { ExpRadio } from "@/components/checkbox/ExpRadio";
+import { CheckboxTile } from "@/components/checkbox/CheckboxTile";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Mail, Bell, Shield, Settings } from "lucide-react";
 
 const Checkboxes = () => {
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(true);
   const [radioValue, setRadioValue] = useState("option1");
   const [radioValue2, setRadioValue2] = useState("payment1");
+  
+  // Tile checkbox states
+  const [emailTile, setEmailTile] = useState(false);
+  const [notificationTile, setNotificationTile] = useState(true);
+  const [securityTile, setSecurityTile] = useState(false);
+  const [settingsTile, setSettingsTile] = useState(true);
 
   // Wrapper functions to handle type conversion
   const handleRadioChange = (value: string | number) => {
@@ -38,6 +46,47 @@ const Checkboxes = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-12">
+        {/* Checkbox Tiles */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Checkbox Tiles</CardTitle>
+            <CardDescription>Card-style checkboxes with titles and descriptions</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <CheckboxTile
+                title="Email Notifications"
+                description="Receive email updates about your account activity"
+                checked={emailTile}
+                onChange={setEmailTile}
+                icon={<Mail className="w-4 h-4" />}
+              />
+              <CheckboxTile
+                title="Push Notifications"
+                description="Get instant notifications on your device"
+                checked={notificationTile}
+                onChange={setNotificationTile}
+                icon={<Bell className="w-4 h-4" />}
+              />
+              <CheckboxTile
+                title="Security Alerts"
+                description="Important security updates and alerts"
+                checked={securityTile}
+                onChange={setSecurityTile}
+                icon={<Shield className="w-4 h-4" />}
+              />
+              <CheckboxTile
+                title="Advanced Settings"
+                description="Enable advanced configuration options"
+                checked={settingsTile}
+                onChange={setSettingsTile}
+                icon={<Settings className="w-4 h-4" />}
+                disabled={true}
+              />
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Basic Checkbox States */}
         <Card className="mb-8">
           <CardHeader>
@@ -186,6 +235,28 @@ const Checkboxes = () => {
           </CardHeader>
           <CardContent>
             <div className="space-y-6">
+              <div>
+                <h4 className="font-medium mb-3 text-white">Dark Checkbox Tiles</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <CheckboxTile
+                    title="Dark Email Notifications"
+                    description="Receive email updates in dark mode"
+                    checked={false}
+                    onChange={(val) => console.log("Dark email:", val)}
+                    icon={<Mail className="w-4 h-4" />}
+                    dark={true}
+                  />
+                  <CheckboxTile
+                    title="Dark Push Notifications"
+                    description="Get notifications with dark theme"
+                    checked={true}
+                    onChange={(val) => console.log("Dark push:", val)}
+                    icon={<Bell className="w-4 h-4" />}
+                    dark={true}
+                  />
+                </div>
+              </div>
+              
               <div>
                 <h4 className="font-medium mb-3 text-white">Dark Checkboxes</h4>
                 <div className="flex flex-col gap-2">
