@@ -5,7 +5,7 @@ import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
 import { colorPalette } from '@/design-system/tokens/colors';
 
-interface ExpInputFieldProps extends Omit<React.ComponentProps<typeof Input>, 'style'> {
+interface ExpInputFieldProps extends React.ComponentProps<typeof Input> {
   hint?: string;
   label?: string;
   labelTextStyle?: string;
