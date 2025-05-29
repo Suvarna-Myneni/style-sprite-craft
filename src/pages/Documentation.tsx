@@ -6,6 +6,15 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { 
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { 
   FileText, 
   Copy, 
   Download, 
@@ -104,12 +113,20 @@ function MyComponent() {
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
             <div>
-              <div className="flex items-center gap-4">
-                <Link to="/" className="text-[#1B489B] hover:text-[#2563eb] transition-colors">
-                  ← Back to Overview
-                </Link>
-              </div>
-              <h1 className="text-4xl font-bold text-gray-900 mt-4">Documentation</h1>
+              <Breadcrumb className="mb-4">
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild>
+                      <Link to="/">Design System</Link>
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>Documentation</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+              <h1 className="text-4xl font-bold text-gray-900">Documentation</h1>
               <p className="text-lg text-gray-600 mt-2">Complete guide to using the Design System</p>
             </div>
             <Badge variant="secondary" className="text-sm px-4 py-2">
