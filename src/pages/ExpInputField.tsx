@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ExpInputField } from "@/components/input/ExpInputField";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input as InputIcon } from "lucide-react";
+import { Edit } from "lucide-react";
 import { 
   Breadcrumb,
   BreadcrumbItem,
@@ -50,7 +50,7 @@ const ExpInputFieldPage = () => {
               </Breadcrumb>
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 rounded-lg bg-[#0c0f24] flex items-center justify-center">
-                  <InputIcon className="w-6 h-6 text-white" />
+                  <Edit className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h1 className="text-4xl font-bold text-gray-900">ExpInputField</h1>
