@@ -12,6 +12,7 @@ export { Button } from '../components/button/Button';
 export { ExpCheckbox } from '../components/checkbox/ExpCheckbox';
 export { ExpRadio } from '../components/checkbox/ExpRadio';
 export { CheckboxTile } from '../components/checkbox/CheckboxTile';
+export { ExpStepper } from '../components/stepper/ExpStepper';
 
 // Design System Configuration
 export { designSystemConfig } from './config/tailwind-preset';
