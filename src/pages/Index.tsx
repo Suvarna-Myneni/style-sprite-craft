@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,7 +17,8 @@ import {
   Zap,
   Tag,
   Layers as TabsIcon,
-  Navigation as NavigationIcon
+  Navigation as NavigationIcon,
+  Edit
 } from "lucide-react";
 
 const Index = () => {
@@ -48,6 +50,13 @@ const Index = () => {
       icon: Target,
       path: "/buttons",
       color: "bg-[#1B489B]"
+    },
+    {
+      title: "Input Fields",
+      description: "Advanced input field components with theme support and validation",
+      icon: Edit,
+      path: "/input-field",
+      color: "bg-[#DC2626]"
     },
     {
       title: "Tags",
