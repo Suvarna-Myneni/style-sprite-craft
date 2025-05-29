@@ -16,6 +16,7 @@ import TabsPage from "./pages/Tabs";
 import Navigation from "./pages/Navigation";
 import Buttons from "./pages/Buttons";
 import Checkboxes from "./pages/Checkboxes";
+import Documentation from "./pages/Documentation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/navigation" element={<Navigation />} />
           <Route path="/buttons" element={<Buttons />} />
           <Route path="/checkboxes" element={<Checkboxes />} />
+          <Route path="/docs" element={<Documentation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
