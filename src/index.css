@@ -1,6 +1,203 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Design System Typography Tokens */
+:root {
+    --10-400-regular-font-family: "Roboto", Helvetica;
+    --10-400-regular-font-size: 10px;
+    --10-400-regular-font-style: normal;
+    --10-400-regular-font-weight: 400;
+    --10-400-regular-letter-spacing: 0px;
+    --10-400-regular-line-height: 16px;
+    --10-400-semibold-font-family: "Roboto", Helvetica;
+    --10-400-semibold-font-size: 12px;
+    --10-400-semibold-font-style: normal;
+    --10-400-semibold-font-weight: 600;
+    --10-400-semibold-letter-spacing: 0px;
+    --10-400-semibold-line-height: 16px;
+    --12-400-font-family: "Roboto", Helvetica;
+    --12-400-font-size: 12px;
+    --12-400-font-style: normal;
+    --12-400-font-weight: 400;
+    --12-400-letter-spacing: 0px;
+    --12-400-line-height: 18px;
+    --12-400-UL-font-family: "Roboto", Helvetica;
+    --12-400-UL-font-size: 12px;
+    --12-400-UL-font-style: normal;
+    --12-400-UL-font-weight: 400;
+    --12-400-UL-letter-spacing: 0px;
+    --12-400-UL-line-height: 18px;
+    --12-600-font-family: "Roboto", Helvetica;
+    --12-600-font-size: 12px;
+    --12-600-font-style: normal;
+    --12-600-font-weight: 600;
+    --12-600-letter-spacing: 0px;
+    --12-600-line-height: 16px;
+    --12-600-semi-bold-UL-font-family: "Roboto", Helvetica;
+    --12-600-semi-bold-UL-font-size: 12px;
+    --12-600-semi-bold-UL-font-style: normal;
+    --12-600-semi-bold-UL-font-weight: 600;
+    --12-600-semi-bold-UL-letter-spacing: 0px;
+    --12-600-semi-bold-UL-line-height: 16px;
+    --14-400-font-family: "Roboto", Helvetica;
+    --14-400-font-size: 14px;
+    --14-400-font-style: normal;
+    --14-400-font-weight: 400;
+    --14-400-letter-spacing: 0px;
+    --14-400-line-height: 20px;
+    --14-400-UL-font-family: "Roboto", Helvetica;
+    --14-400-UL-font-size: 14px;
+    --14-400-UL-font-style: normal;
+    --14-400-UL-font-weight: 400;
+    --14-400-UL-letter-spacing: 0px;
+    --14-400-UL-line-height: 20px;
+    --14-600-font-family: "Roboto", Helvetica;
+    --14-600-font-size: 14px;
+    --14-600-font-style: normal;
+    --14-600-font-weight: 600;
+    --14-600-letter-spacing: 0px;
+    --14-600-line-height: 20px;
+    --14-600-semi-bold-UL-font-family: "Roboto", Helvetica;
+    --14-600-semi-bold-UL-font-size: 14px;
+    --14-600-semi-bold-UL-font-style: normal;
+    --14-600-semi-bold-UL-font-weight: 600;
+    --14-600-semi-bold-UL-letter-spacing: 0px;
+    --14-600-semi-bold-UL-line-height: 20px;
+    --16-400-font-family: "Roboto", Helvetica;
+    --16-400-font-size: 16px;
+    --16-400-font-style: normal;
+    --16-400-font-weight: 400;
+    --16-400-letter-spacing: 0px;
+    --16-400-line-height: 24px;
+    --16-400-UL-font-family: "Roboto", Helvetica;
+    --16-400-UL-font-size: 16px;
+    --16-400-UL-font-style: normal;
+    --16-400-UL-font-weight: 400;
+    --16-400-UL-letter-spacing: 0px;
+    --16-400-UL-line-height: 24px;
+    --16-600-font-family: "Roboto", Helvetica;
+    --16-600-font-size: 16px;
+    --16-600-font-style: normal;
+    --16-600-font-weight: 600;
+    --16-600-letter-spacing: 0px;
+    --16-600-line-height: 24px;
+    --16-600-semi-bold-UL-font-family: "Roboto", Helvetica;
+    --16-600-semi-bold-UL-font-size: 16px;
+    --16-600-semi-bold-UL-font-style: normal;
+    --16-600-semi-bold-UL-font-weight: 600;
+    --16-600-semi-bold-UL-letter-spacing: 0px;
+    --16-600-semi-bold-UL-line-height: 24px;
+    --18-400-font-family: "Roboto", Helvetica;
+    --18-400-font-size: 18px;
+    --18-400-font-style: normal;
+    --18-400-font-weight: 400;
+    --18-400-letter-spacing: 0px;
+    --18-400-line-height: 24px;
+    --18-400-UL-font-family: "Roboto", Helvetica;
+    --18-400-UL-font-size: 18px;
+    --18-400-UL-font-style: normal;
+    --18-400-UL-font-weight: 400;
+    --18-400-UL-letter-spacing: 0px;
+    --18-400-UL-line-height: 24px;
+    --18-600-font-family: "Roboto", Helvetica;
+    --18-600-font-size: 18px;
+    --18-600-font-style: normal;
+    --18-600-font-weight: 600;
+    --18-600-letter-spacing: 0px;
+    --18-600-line-height: 24px;
+    --18-600-semi-bold-UL-font-family: "Roboto", Helvetica;
+    --18-600-semi-bold-UL-font-size: 18px;
+    --18-600-semi-bold-UL-font-style: normal;
+    --18-600-semi-bold-UL-font-weight: 600;
+    --18-600-semi-bold-UL-letter-spacing: 0px;
+    --18-600-semi-bold-UL-line-height: 24px;
+    --20-400-font-family: "Roboto", Helvetica;
+    --20-400-font-size: 20px;
+    --20-400-font-style: normal;
+    --20-400-font-weight: 400;
+    --20-400-letter-spacing: 0px;
+    --20-400-line-height: 24px;
+    --20-400-UL-font-family: "Roboto", Helvetica;
+    --20-400-UL-font-size: 20px;
+    --20-400-UL-font-style: normal;
+    --20-400-UL-font-weight: 400;
+    --20-400-UL-letter-spacing: 0px;
+    --20-400-UL-line-height: 24px;
+    --20-600-font-family: "Roboto", Helvetica;
+    --20-600-font-size: 20px;
+    --20-600-font-style: normal;
+    --20-600-font-weight: 600;
+    --20-600-letter-spacing: 0px;
+    --20-600-line-height: 24px;
+    --20-600-semi-bold-UL-font-family: "Roboto", Helvetica;
+    --20-600-semi-bold-UL-font-size: 20px;
+    --20-600-semi-bold-UL-font-style: normal;
+    --20-600-semi-bold-UL-font-weight: 600;
+    --20-600-semi-bold-UL-letter-spacing: 0px;
+    --20-600-semi-bold-UL-line-height: 24px;
+    --24-400-font-family: "Roboto", Helvetica;
+    --24-400-font-size: 24px;
+    --24-400-font-style: normal;
+    --24-400-font-weight: 400;
+    --24-400-letter-spacing: 0px;
+    --24-400-line-height: 30px;
+    --24-600-font-family: "Roboto", Helvetica;
+    --24-600-font-size: 24px;
+    --24-600-font-style: normal;
+    --24-600-font-weight: 600;
+    --24-600-letter-spacing: 0px;
+    --24-600-line-height: 30px;
+    --28-400-font-family: "Roboto", Helvetica;
+    --28-400-font-size: 28px;
+    --28-400-font-style: normal;
+    --28-400-font-weight: 400;
+    --28-400-letter-spacing: 0px;
+    --28-400-line-height: 34px;
+    --28-600-font-family: "Roboto", Helvetica;
+    --28-600-font-size: 28px;
+    --28-600-font-style: normal;
+    --28-600-font-weight: 600;
+    --28-600-letter-spacing: 0px;
+    --28-600-line-height: 34px;
+    --32-400-font-family: "Roboto", Helvetica;
+    --32-400-font-size: 32px;
+    --32-400-font-style: normal;
+    --32-400-font-weight: 400;
+    --32-400-letter-spacing: 0px;
+    --32-400-line-height: 38px;
+    --32-600-font-family: "Roboto", Helvetica;
+    --32-600-font-size: 32px;
+    --32-600-font-style: normal;
+    --32-600-font-weight: 600;
+    --32-600-letter-spacing: 0px;
+    --32-600-line-height: 38px;
+    --40-400-font-family: "Roboto", Helvetica;
+    --40-400-font-size: 40px;
+    --40-400-font-style: normal;
+    --40-400-font-weight: 400;
+    --40-400-letter-spacing: 0px;
+    --40-400-line-height: 48px;
+    --40-600-font-family: "Roboto", Helvetica;
+    --40-600-font-size: 40px;
+    --40-600-font-style: normal;
+    --40-600-font-weight: 600;
+    --40-600-letter-spacing: 0px;
+    --40-600-line-height: 48px;
+    --48-400-font-family: "Roboto", Helvetica;
+    --48-400-font-size: 48px;
+    --48-400-font-style: normal;
+    --48-400-font-weight: 400;
+    --48-400-letter-spacing: 0px;
+    --48-400-line-height: 52px;
+    --48-600-font-family: "Roboto", Helvetica;
+    --48-600-font-size: 48px;
+    --48-600-font-style: normal;
+    --48-600-font-weight: 600;
+    --48-600-letter-spacing: 0px;
+    --48-600-line-height: 52px;
+}
 
 @layer base {
   :root {
@@ -98,4 +295,67 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Design System Input Field Styles */
+.text-box {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    width: 320px;
+}
+
+.text-box .label-t {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 4px;
+    position: relative;
+    width: 100%;
+}
+
+.text-box .text-wrapper {
+    color: #303030;
+    font-family: var(--16-400-font-family);
+    font-size: var(--16-400-font-size);
+    font-style: var(--16-400-font-style);
+    font-weight: var(--16-400-font-weight);
+    letter-spacing: var(--16-400-letter-spacing);
+    line-height: var(--16-400-line-height);
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.text-box .frame {
+    align-items: center;
+    align-self: stretch;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #cecfd3;
+    border-radius: 8px;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    justify-content: center;
+    padding: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.text-box .text {
+    color: #858791;
+    flex: 1;
+    font-family: var(--16-400-font-family);
+    font-size: var(--16-400-font-size);
+    font-style: var(--16-400-font-style);
+    font-weight: var(--16-400-font-weight);
+    letter-spacing: var(--16-400-letter-spacing);
+    line-height: var(--16-400-line-height);
+    margin-top: -1.00px;
+    position: relative;
 }

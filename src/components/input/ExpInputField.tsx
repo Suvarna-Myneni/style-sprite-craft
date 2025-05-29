@@ -1,11 +1,8 @@
 
 import React, { forwardRef } from 'react';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
-import { colorPalette } from '@/design-system/tokens/colors';
 
-interface ExpInputFieldProps extends React.ComponentProps<typeof Input> {
+interface ExpInputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   hint?: string;
   label?: string;
   labelTextStyle?: string;
@@ -19,135 +16,14 @@ interface ExpInputFieldProps extends React.ComponentProps<typeof Input> {
   onSubmittedAction?: (value: string) => void;
   ignorePointers?: boolean;
   floatingLabelBehavior?: 'auto' | 'always' | 'never';
-}
-
-// Abstract decorator interface
-interface InputFieldDecorator {
-  createInputStyles(props: {
-    hasError: boolean;
-    isDarkMode: boolean;
-    enabled?: boolean;
-    borderRadius?: number;
-    isDense?: boolean;
-  }): string;
-  
-  createLabelStyles(props: {
-    hasError: boolean;
-    isDarkMode: boolean;
-  }): string;
-}
-
-// Light theme decorator
-class LightInputFieldDecorator implements InputFieldDecorator {
-  createInputStyles({ hasError, enabled = true, borderRadius = 8, isDense }: {
-    hasError: boolean;
-    isDarkMode: boolean;
-    enabled?: boolean;
-    borderRadius?: number;
-    isDense?: boolean;
-  }): string {
-    const baseClasses = [
-      'border',
-      'transition-colors',
-      'focus-visible:outline-none',
-      'focus-visible:ring-1',
-      isDense ? 'px-3 py-1' : 'px-4 py-2',
-    ];
-
-    if (!enabled) {
-      baseClasses.push('bg-gray-100', 'cursor-not-allowed', 'border-gray-300');
-    } else if (hasError) {
-      baseClasses.push(
-        'border-red-500',
-        'focus-visible:ring-red-500',
-        'focus-visible:border-red-500'
-      );
-    } else {
-      baseClasses.push(
-        'border-gray-300',
-        'focus-visible:ring-gray-900',
-        'focus-visible:border-gray-900',
-        'hover:border-gray-400'
-      );
-    }
-
-    baseClasses.push(`rounded-[${borderRadius}px]`);
-    
-    return baseClasses.join(' ');
-  }
-
-  createLabelStyles({ hasError }: { hasError: boolean; isDarkMode: boolean }): string {
-    return cn(
-      'text-sm font-normal',
-      hasError ? 'text-red-500' : 'text-gray-900'
-    );
-  }
-}
-
-// Dark theme decorator
-class DarkInputFieldDecorator implements InputFieldDecorator {
-  createInputStyles({ hasError, enabled = true, borderRadius = 8, isDense }: {
-    hasError: boolean;
-    isDarkMode: boolean;
-    enabled?: boolean;
-    borderRadius?: number;
-    isDense?: boolean;
-  }): string {
-    const baseClasses = [
-      'border',
-      'transition-colors',
-      'focus-visible:outline-none',
-      'focus-visible:ring-1',
-      'bg-gray-900',
-      'text-white',
-      isDense ? 'px-3 py-1' : 'px-4 py-2',
-    ];
-
-    if (!enabled) {
-      baseClasses.push('bg-gray-800', 'cursor-not-allowed', 'border-gray-600');
-    } else if (hasError) {
-      baseClasses.push(
-        'border-orange-400',
-        'focus-visible:ring-orange-400',
-        'focus-visible:border-orange-400'
-      );
-    } else {
-      baseClasses.push(
-        'border-gray-600',
-        'focus-visible:ring-blue-400',
-        'focus-visible:border-blue-400',
-        'hover:border-gray-500'
-      );
-    }
-
-    baseClasses.push(`rounded-[${borderRadius}px]`);
-    
-    return baseClasses.join(' ');
-  }
-
-  createLabelStyles({ hasError, isDarkMode }: { hasError: boolean; isDarkMode: boolean }): string {
-    return cn(
-      'text-sm font-normal',
-      hasError 
-        ? 'text-orange-400' 
-        : isDarkMode 
-          ? 'text-blue-400' 
-          : 'text-gray-400'
-    );
-  }
-}
-
-// Factory for creating decorators
-class InputFieldFactory {
-  getInputFieldDecorator(isDarkMode: boolean): InputFieldDecorator {
-    return isDarkMode ? new DarkInputFieldDecorator() : new LightInputFieldDecorator();
-  }
+  showLabel?: boolean;
+  showPlaceholder?: boolean;
 }
 
 const ExpInputField = forwardRef<HTMLInputElement, ExpInputFieldProps>(
   ({ 
-    hint,
-    label,
+    hint = "Text here",
+    label = "Label",
     labelTextStyle,
     isDarkMode = false,
     borderRadius = 8,
@@ -162,23 +38,10 @@ const ExpInputField = forwardRef<HTMLInputElement, ExpInputFieldProps>(
     className,
     style,
     onKeyDown,
+    showLabel = true,
+    showPlaceholder = true,
     ...props 
   }, ref) => {
-    const factory = new InputFieldFactory();
-    const decorator = factory.getInputFieldDecorator(isDarkMode);
-    
-    const inputStyles = decorator.createInputStyles({
-      hasError,
-      isDarkMode,
-      enabled: !disabled,
-      borderRadius,
-      isDense
-    });
-    
-    const labelStyles = decorator.createLabelStyles({
-      hasError,
-      isDarkMode
-    });
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter' && onSubmittedAction) {
@@ -189,35 +52,69 @@ const ExpInputField = forwardRef<HTMLInputElement, ExpInputFieldProps>(
 
     const containerHeight = hasError && height ? height + 17 : height;
 
+    // Base styles matching the design system
+    const containerClasses = cn(
+      "text-box",
+      className
+    );
+
+    const labelClasses = cn(
+      "text-wrapper",
+      hasError && "text-red-500",
+      isDarkMode && hasError && "text-orange-400",
+      isDarkMode && !hasError && "text-blue-400",
+      labelTextStyle
+    );
+
+    const frameClasses = cn(
+      "frame",
+      hasError && "border-red-500",
+      isDarkMode && hasError && "border-orange-400 bg-gray-900",
+      isDarkMode && !hasError && "border-gray-600 bg-gray-900 hover:border-gray-500",
+      isDarkMode && "focus-within:border-blue-400",
+      !isDarkMode && !hasError && "hover:border-gray-400 focus-within:border-gray-900",
+      disabled && "bg-gray-100 cursor-not-allowed border-gray-300",
+      isDarkMode && disabled && "bg-gray-800 border-gray-600",
+      "transition-colors focus-within:outline-none"
+    );
+
+    const inputClasses = cn(
+      "text",
+      "border-0 outline-none bg-transparent w-full",
+      isDarkMode && "text-white placeholder:text-gray-400",
+      !isDarkMode && "text-gray-900 placeholder:text-gray-500",
+      disabled && "cursor-not-allowed"
+    );
+
     return (
-      <div className="flex flex-col space-y-1">
-        {label && (
-          <Label className={cn(labelStyles, labelTextStyle)}>
-            {label}
-          </Label>
+      <div className={containerClasses} style={{ height: containerHeight, ...style }}>
+        {showLabel && (
+          <div className="label-t">
+            <div className={labelClasses}>
+              {label}
+            </div>
+          </div>
         )}
-        <div 
-          className="relative"
-          style={{ height: containerHeight }}
-        >
-          <Input
+        
+        <div className={frameClasses}>
+          <input
             ref={ref}
-            placeholder={hint}
+            placeholder={showPlaceholder ? hint : ""}
             disabled={disabled || ignorePointers}
-            className={cn(inputStyles, className)}
-            style={style}
+            className={inputClasses}
             onKeyDown={handleKeyDown}
             {...props}
           />
           {suffixIcon && (
-            <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+            <div className="flex-shrink-0">
               {suffixIcon}
             </div>
           )}
         </div>
+        
         {hasError && validator && (
           <span className={cn(
-            'text-xs font-normal',
+            'text-xs font-normal mt-1',
             isDarkMode ? 'text-orange-400' : 'text-red-500'
           )}>
             {validator(props.value as string)}
