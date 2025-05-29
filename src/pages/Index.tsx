@@ -59,6 +59,13 @@ const Index = () => {
       color: "bg-[#DC2626]"
     },
     {
+      title: "Progress Bar",
+      description: "Step-by-step progress indicators and stepper components",
+      icon: Users,
+      path: "/progress-bar",
+      color: "bg-[#1E774A]"
+    },
+    {
       title: "Tags",
       description: "Categorization labels and contextual information components",
       icon: Tag,

@@ -42,6 +42,7 @@ const App = () => (
           <Route path="/buttons" element={<Buttons />} />
           <Route path="/checkboxes" element={<Checkboxes />} />
           <Route path="/input-field" element={<ExpInputFieldPage />} />
+          <Route path="/progress-bar" element={<ProgressBar />} />
           <Route path="/docs" element={<Documentation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
