@@ -17,6 +17,7 @@ import Navigation from "./pages/Navigation";
 import Buttons from "./pages/Buttons";
 import Checkboxes from "./pages/Checkboxes";
 import ExpInputFieldPage from "./pages/ExpInputField";
+import ProgressBar from "./pages/ProgressBar";
 import Documentation from "./pages/Documentation";
 import NotFound from "./pages/NotFound";
 
