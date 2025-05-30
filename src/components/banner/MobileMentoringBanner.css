@@ -1,0 +1,56 @@
+
+.mobile-mentoring-banner {
+    position: relative;
+    width: 343px;
+    height: 134px;
+    background: url('/lovable-uploads/29f320a2-6e3b-4bc0-8a96-6254316f2f64.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    border: 1px solid #E7E7E9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+}
+
+.mentoring-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mentoring-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.mentoring-contact {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.mentoring-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.mentoring-icon {
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.mentoring-icon:hover {
+    opacity: 0.8;
+}

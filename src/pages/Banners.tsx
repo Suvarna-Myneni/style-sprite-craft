@@ -8,6 +8,9 @@ import { BannersWebGraph } from "@/components/banner/BannersWebGraph";
 import { BannersWebFrame } from "@/components/banner/BannersWebFrame";
 import { BannersWebNeed } from "@/components/banner/BannersWebNeed";
 import { MobileDISCBanner } from "@/components/banner/MobileDISCBanner";
+import { MobileMentoringBanner } from "@/components/banner/MobileMentoringBanner";
+import { MobileWelcomeBanner } from "@/components/banner/MobileWelcomeBanner";
+import { MobileHealthcareBanner } from "@/components/banner/MobileHealthcareBanner";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Palette } from "lucide-react";
@@ -117,6 +120,24 @@ const Banners = () => {
             <div>
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Mobile DISC Assessment Banner</h4>
               <MobileDISCBanner />
+            </div>
+
+            {/* Mobile Mentoring Banner */}
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Mobile Mentoring Banner</h4>
+              <MobileMentoringBanner />
+            </div>
+
+            {/* Mobile Welcome Banner */}
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Mobile Welcome Banner</h4>
+              <MobileWelcomeBanner />
+            </div>
+
+            {/* Mobile Healthcare Banner */}
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Mobile Healthcare Banner</h4>
+              <MobileHealthcareBanner />
             </div>
           </div>
         </div>

@@ -1,0 +1,48 @@
+
+.mobile-welcome-banner {
+    position: relative;
+    width: 343px;
+    height: 134px;
+    background: url('/lovable-uploads/3ad391ee-6218-4ef4-a939-f9a8e8b155b2.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    border: 1px solid #E7E7E9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+}
+
+.welcome-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    padding-right: 16px;
+}
+
+.welcome-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.welcome-description {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.welcome-arrow {
+    color: #FFFFFF;
+    flex-shrink: 0;
+}
