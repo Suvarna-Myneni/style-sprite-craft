@@ -7,6 +7,7 @@ import { TrainingBanner } from "@/components/banner/TrainingBanner";
 import { BannersWebGraph } from "@/components/banner/BannersWebGraph";
 import { BannersWebFrame } from "@/components/banner/BannersWebFrame";
 import { BannersWebNeed } from "@/components/banner/BannersWebNeed";
+import { MobileDISCBanner } from "@/components/banner/MobileDISCBanner";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Palette } from "lucide-react";
@@ -104,6 +105,18 @@ const Banners = () => {
             <div>
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Need Mentoring Banner</h4>
               <BannersWebNeed />
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Banners */}
+        <div className="mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">Mobile Banners</h3>
+          <div className="space-y-6 mb-8">
+            {/* Mobile DISC Assessment Banner */}
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Mobile DISC Assessment Banner</h4>
+              <MobileDISCBanner />
             </div>
           </div>
         </div>
