@@ -1,0 +1,95 @@
+
+.banners-web-need {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 8px;
+    width: 268px;
+    height: 118px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.74) 0.96%, rgba(0, 0, 0, 0.33) 100%), url('/lovable-uploads/f3546a99-7e54-4fb7-a2e7-0ef846ad5916.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+}
+
+.need-mentoring-title {
+    width: 136px;
+    height: 24px;
+    font-family: 'Roboto', Helvetica;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.22px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0;
+}
+
+.content-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 236px;
+    height: 54px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.charles-smith {
+    width: 88px;
+    height: 20px;
+    font-family: 'Roboto', Helvetica;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0;
+}
+
+.contact-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0px;
+    gap: 10px;
+    width: 236px;
+    height: 26px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    color: #FFFFFF;
+    flex: none;
+    flex-grow: 0;
+}
+
+.email-icon {
+    order: 0;
+}
+
+.call-icon {
+    order: 1;
+}

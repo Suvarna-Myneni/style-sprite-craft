@@ -6,6 +6,7 @@ import { ResponsiveHeader } from "@/components/navigation/ResponsiveHeader";
 import { TrainingBanner } from "@/components/banner/TrainingBanner";
 import { BannersWebGraph } from "@/components/banner/BannersWebGraph";
 import { BannersWebFrame } from "@/components/banner/BannersWebFrame";
+import { BannersWebNeed } from "@/components/banner/BannersWebNeed";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Palette } from "lucide-react";
@@ -98,6 +99,12 @@ const Banners = () => {
               <h4 className="text-lg font-semibold text-gray-900 mb-3">DISC Assessment Banner</h4>
               <BannersWebFrame />
             </div>
+
+            {/* Need Mentoring Banner */}
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Need Mentoring Banner</h4>
+              <BannersWebNeed />
+            </div>
           </div>
         </div>
 
@@ -132,6 +139,16 @@ const Banners = () => {
               <CardContent>
                 <CardDescription>
                   An interactive banner with background image promoting DISC assessment with visual elements.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Mentoring Banner</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  A compact banner promoting mentoring services with contact information and background image.
                 </CardDescription>
               </CardContent>
             </Card>
