@@ -1,6 +1,7 @@
 
 import React, { forwardRef } from 'react';
 import { cn } from '@/lib/utils';
+import './ExpInputField.css';
 
 interface ExpInputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   hint?: string;
@@ -29,7 +30,7 @@ const ExpInputField = forwardRef<HTMLInputElement, ExpInputFieldProps>(
     borderRadius = 8,
     isDense = false,
     hasError = false,
-    height,
+    height = 48,
     suffixIcon,
     validator,
     onSubmittedAction,
@@ -55,39 +56,34 @@ const ExpInputField = forwardRef<HTMLInputElement, ExpInputFieldProps>(
     // Base styles matching the design system
     const containerClasses = cn(
       "text-box",
+      isDarkMode && "dark",
+      hasError && "error",
+      disabled && "disabled",
       className
     );
 
     const labelClasses = cn(
       "text-wrapper",
-      hasError && "text-red-500",
-      isDarkMode && hasError && "text-orange-400",
-      isDarkMode && !hasError && "text-blue-400",
       labelTextStyle
     );
 
     const frameClasses = cn(
-      "frame",
-      hasError && "border-red-500",
-      isDarkMode && hasError && "border-orange-400 bg-gray-900",
-      isDarkMode && !hasError && "border-gray-600 bg-gray-900 hover:border-gray-500",
-      isDarkMode && "focus-within:border-blue-400",
-      !isDarkMode && !hasError && "hover:border-gray-400 focus-within:border-gray-900",
-      disabled && "bg-gray-100 cursor-not-allowed border-gray-300",
-      isDarkMode && disabled && "bg-gray-800 border-gray-600",
-      "transition-colors focus-within:outline-none"
+      "frame"
     );
 
     const inputClasses = cn(
-      "text",
-      "border-0 outline-none bg-transparent w-full",
-      isDarkMode && "text-white placeholder:text-gray-400",
-      !isDarkMode && "text-gray-900 placeholder:text-gray-500",
-      disabled && "cursor-not-allowed"
+      "text"
     );
 
     return (
-      <div className={containerClasses} style={{ height: containerHeight, ...style }}>
+      <div 
+        className={containerClasses} 
+        style={{ 
+          height: containerHeight, 
+          borderRadius: `${borderRadius}px`,
+          ...style 
+        }}
+      >
         {showLabel && (
           <div className="label-t">
             <div className={labelClasses}>
@@ -96,7 +92,7 @@ const ExpInputField = forwardRef<HTMLInputElement, ExpInputFieldProps>(
           </div>
         )}
         
-        <div className={frameClasses}>
+        <div className={frameClasses} style={{ borderRadius: `${borderRadius}px` }}>
           <input
             ref={ref}
             placeholder={showPlaceholder ? hint : ""}

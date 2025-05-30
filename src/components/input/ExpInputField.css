@@ -1,0 +1,152 @@
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+  width: 320px;
+}
+
+.label-t {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+  width: 100%;
+  height: 24px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.text-wrapper {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #303030;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.frame {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  width: 100%;
+  height: 48px;
+  background: #FFFFFF;
+  border: 1px solid #CECFD3;
+  border-radius: 8px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.frame:hover {
+  border-color: #858791;
+}
+
+.frame:focus-within {
+  border-color: #303030;
+  outline: none;
+}
+
+.text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #303030;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  flex: 1;
+  order: 1;
+  flex-grow: 1;
+}
+
+.text::placeholder {
+  color: #858791;
+}
+
+/* Dark mode styles */
+.text-box.dark .text-wrapper {
+  color: #E7E7E9;
+}
+
+.text-box.dark .frame {
+  background: #0C0F24;
+  border-color: #3D3F50;
+}
+
+.text-box.dark .frame:hover {
+  border-color: #858791;
+}
+
+.text-box.dark .frame:focus-within {
+  border-color: #496DAF;
+}
+
+.text-box.dark .text {
+  color: #FFFFFF;
+}
+
+.text-box.dark .text::placeholder {
+  color: #858791;
+}
+
+/* Error states */
+.text-box.error .text-wrapper {
+  color: #DC2626;
+}
+
+.text-box.error .frame {
+  border-color: #DC2626;
+}
+
+.text-box.dark.error .text-wrapper {
+  color: #FB7185;
+}
+
+.text-box.dark.error .frame {
+  border-color: #FB7185;
+}
+
+/* Disabled states */
+.text-box.disabled .frame {
+  background: #F3F4F6;
+  border-color: #D1D5DB;
+  cursor: not-allowed;
+}
+
+.text-box.disabled .text {
+  color: #9CA3AF;
+  cursor: not-allowed;
+}
+
+.text-box.dark.disabled .frame {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.text-box.dark.disabled .text {
+  color: #6B7280;
+}
