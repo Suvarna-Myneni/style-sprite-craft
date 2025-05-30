@@ -78,9 +78,9 @@ const Banners = () => {
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-6 py-12">
-        {/* Banner Components */}
+        {/* Web Banners */}
         <div className="mb-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Banner Components</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">Web Banners</h3>
           <div className="space-y-6 mb-8">
             {/* Training Banner */}
             <div>
@@ -88,9 +88,9 @@ const Banners = () => {
               <TrainingBanner />
             </div>
             
-            {/* Web Graph Banner */}
+            {/* Information Banner */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">Web Graph Banner</h4>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Information Banner</h4>
               <BannersWebGraph />
             </div>
 
