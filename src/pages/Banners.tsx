@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ResponsiveHeader } from "@/components/navigation/ResponsiveHeader";
 import { TrainingBanner } from "@/components/banner/TrainingBanner";
 import { BannersWebGraph } from "@/components/banner/BannersWebGraph";
+import { BannersWebFrame } from "@/components/banner/BannersWebFrame";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Palette } from "lucide-react";
@@ -91,6 +92,12 @@ const Banners = () => {
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Web Graph Banner</h4>
               <BannersWebGraph />
             </div>
+
+            {/* DISC Assessment Banner */}
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">DISC Assessment Banner</h4>
+              <BannersWebFrame />
+            </div>
           </div>
         </div>
 
@@ -120,11 +127,11 @@ const Banners = () => {
             </Card>
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Banner Guidelines</CardTitle>
+                <CardTitle className="text-lg">Assessment Banner</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Best practices for using banner components to highlight important content and actions.
+                  An interactive banner with background image promoting DISC assessment with visual elements.
                 </CardDescription>
               </CardContent>
             </Card>
