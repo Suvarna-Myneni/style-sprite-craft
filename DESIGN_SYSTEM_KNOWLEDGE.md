@@ -538,9 +538,21 @@ export const Button: React.FC<ButtonProps> = ({
 }
 ```
 
-## 3. Design System Tokens
+## 3. Required Utility Functions
 
-### Colors (colors.ts)
+### Utils Function (lib/utils.ts)
+```typescript
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+## 4. Design System Tokens
+
+### Colors (design-system/tokens/colors.ts)
 ```typescript
 export const colorPalette = {
   primary: {
@@ -572,7 +584,7 @@ export const colorPalette = {
 } as const;
 ```
 
-### Typography (typography.ts)
+### Typography (design-system/tokens/typography.ts)
 ```typescript
 export const typography = {
   fontFamily: {
@@ -607,7 +619,7 @@ export const typography = {
 } as const;
 ```
 
-### Spacing (spacing.ts)
+### Spacing (design-system/tokens/spacing.ts)
 ```typescript
 export const spacing = {
   xs: '4px',
@@ -630,11 +642,53 @@ export const borderRadius = {
 } as const;
 ```
 
-## 4. Usage Examples
+## 5. Installation Instructions
+
+### Step 1: Create Required Files
+Create these files in your new Lovable project:
+
+```
+src/
+├── lib/
+│   └── utils.ts
+├── components/
+│   ├── input/
+│   │   ├── ExpInputField.tsx
+│   │   └── ExpInputField.css
+│   └── button/
+│       ├── Button.tsx
+│       └── Button.css
+└── design-system/
+    └── tokens/
+        ├── colors.ts
+        ├── typography.ts
+        └── spacing.ts
+```
+
+### Step 2: Install Required Dependencies
+Make sure your project has these dependencies (most are included by default in Lovable):
+- `lucide-react` (for icons)
+- `clsx` (for className utilities)
+- `tailwind-merge` (for merging Tailwind classes)
+
+### Step 3: Add Roboto Font
+Add this to your `index.html` in the `<head>` section:
+```html
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+```
+
+### Step 4: Import and Use Components
+```typescript
+import { ExpInputField } from '@/components/input/ExpInputField';
+import { Button } from '@/components/button/Button';
+```
+
+## 6. Usage Examples
 
 ### Basic ExpInputField Usage
 ```typescript
 import { ExpInputField } from '@/components/input/ExpInputField';
+import { Search } from 'lucide-react';
 
 // Basic usage
 <ExpInputField
@@ -664,6 +718,13 @@ import { ExpInputField } from '@/components/input/ExpInputField';
   hint="Search..."
   suffixIcon={<Search className="w-4 h-4 text-gray-400" />}
 />
+
+// Dark mode
+<ExpInputField
+  label="Dark Input"
+  hint="Enter text"
+  isDarkMode={true}
+/>
 ```
 
 ### Basic Button Usage
@@ -674,70 +735,157 @@ import { Button } from '@/components/button/Button';
 <Button label="Click Me" variant="primary" styleType="solid" />
 
 // Different variants
-<Button variant="primary" styleType="solid" />
-<Button variant="secondary" styleType="outline" />
-<Button variant="success" styleType="ghost" />
+<Button label="Primary" variant="primary" styleType="solid" />
+<Button label="Secondary" variant="secondary" styleType="outline" />
+<Button label="Success" variant="success" styleType="ghost" />
+<Button label="Warning" variant="warning" styleType="solid" />
 
 // Different sizes
-<Button size="small" />
-<Button size="base" />
-<Button size="large" />
+<Button label="Small" size="small" />
+<Button label="Base" size="base" />
+<Button label="Large" size="large" />
 
 // With icons
-<Button showLeftIcon={true} label="Add Item" />
-<Button showRightIcon={true} label="Continue" />
+<Button label="Add Item" showLeftIcon={true} />
+<Button label="Continue" showRightIcon={true} />
+<Button label="Add & Continue" showLeftIcon={true} showRightIcon={true} />
+
+// With click handler
+<Button 
+  label="Click Me" 
+  variant="primary" 
+  styleType="solid"
+  onClick={() => console.log('Button clicked!')} 
+/>
 ```
 
-## 5. Installation Instructions
-
-1. Copy the component files to your project:
-   - `src/components/input/ExpInputField.tsx`
-   - `src/components/input/ExpInputField.css`
-   - `src/components/button/Button.tsx`
-   - `src/components/button/Button.css`
-
-2. Copy the design tokens:
-   - `src/design-system/tokens/colors.ts`
-   - `src/design-system/tokens/typography.ts`
-   - `src/design-system/tokens/spacing.ts`
-
-3. Install required dependencies:
-   ```bash
-   npm install lucide-react class-variance-authority
-   ```
-
-4. Add Roboto font to your HTML:
-   ```html
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
-   ```
-
-5. Import and use components in your project:
-   ```typescript
-   import { ExpInputField } from '@/components/input/ExpInputField';
-   import { Button } from '@/components/button/Button';
-   ```
-
-## 6. Component Props Reference
+## 7. Component Props Reference
 
 ### ExpInputField Props
-- `hint?: string` - Placeholder text
-- `label?: string` - Label text
-- `isDarkMode?: boolean` - Enable dark theme
-- `hasError?: boolean` - Show error state
-- `height?: number` - Input height (32, 48, 64)
-- `borderRadius?: number` - Custom border radius
-- `suffixIcon?: ReactNode` - Icon on the right
-- `validator?: (value: string) => string | undefined` - Validation function
-- `onSubmittedAction?: (value: string) => void` - Enter key handler
-- `disabled?: boolean` - Disable input
+```typescript
+interface ExpInputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  hint?: string;                    // Placeholder text (default: "Text here")
+  label?: string;                   // Label text (default: "Label")
+  labelTextStyle?: string;          // Custom CSS class for label
+  isDarkMode?: boolean;             // Enable dark theme (default: false)
+  borderRadius?: number;            // Custom border radius (default: 8)
+  isDense?: boolean;                // Compact mode (default: false)
+  hasError?: boolean;               // Show error state (default: false)
+  height?: number;                  // Input height (default: 48)
+  suffixIcon?: React.ReactNode;     // Icon on the right
+  validator?: (value: string) => string | undefined;  // Validation function
+  onSubmittedAction?: (value: string) => void;        // Enter key handler
+  ignorePointers?: boolean;         // Disable pointer events (default: false)
+  floatingLabelBehavior?: 'auto' | 'always' | 'never';  // Label behavior
+  showLabel?: boolean;              // Show/hide label (default: true)
+  showPlaceholder?: boolean;        // Show/hide placeholder (default: true)
+}
+```
 
 ### Button Props
-- `label?: string` - Button text
-- `variant?: "primary" | "secondary" | "success" | "warning"` - Color variant
-- `size?: "small" | "base" | "large"` - Size variant
-- `styleType?: "solid" | "outline" | "ghost"` - Style variant
-- `state?: "default" | "hover" | "disabled"` - Button state
-- `showLeftIcon?: boolean` - Show left icon
-- `showRightIcon?: boolean` - Show right icon
-- `onClick?: () => void` - Click handler
+```typescript
+interface ButtonProps {
+  label?: string;                   // Button text (default: "Button")
+  variant?: "primary" | "secondary" | "success" | "warning";  // Color variant
+  size?: "small" | "base" | "large";                         // Size variant
+  styleType?: "solid" | "outline" | "ghost";                 // Style variant
+  state?: "default" | "hover" | "disabled";                  // Button state
+  showLeftIcon?: boolean;           // Show left icon (default: false)
+  showRightIcon?: boolean;          // Show right icon (default: false)
+  onClick?: () => void;             // Click handler
+}
 ```
+
+## 8. Troubleshooting
+
+### Common Issues and Solutions
+
+1. **"Cannot find module '@/lib/utils'" Error**
+   - Make sure you have created the `src/lib/utils.ts` file
+   - Ensure your `tsconfig.json` has the path mapping for `@/*`
+
+2. **"clsx is not defined" Error**
+   - Install clsx: The package should already be available in Lovable projects
+   - If not available, you can replace `clsx` with a simple function
+
+3. **Font not loading**
+   - Make sure you added the Google Fonts link to your `index.html`
+   - Check that the font family name matches exactly: 'Roboto'
+
+4. **CSS styles not applying**
+   - Ensure you're importing the CSS files in your components
+   - Check that the CSS file paths are correct
+   - Make sure there are no conflicting styles
+
+5. **Icons not showing**
+   - Verify that `lucide-react` is installed
+   - Import the specific icons you need: `import { Search, Plus, ArrowRight } from 'lucide-react'`
+
+### Alternative Utils Function (if clsx is not available)
+```typescript
+// Simple alternative to clsx if not available
+export function cn(...classes: (string | undefined | null | false)[]): string {
+  return classes.filter(Boolean).join(' ');
+}
+```
+
+## 9. Quick Start Template
+
+Here's a complete example component using both Button and ExpInputField:
+
+```typescript
+import React, { useState } from 'react';
+import { ExpInputField } from '@/components/input/ExpInputField';
+import { Button } from '@/components/button/Button';
+import { Search } from 'lucide-react';
+
+const ExampleForm = () => {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+
+  const validateEmail = (value: string) => {
+    if (!value) return "Email is required";
+    if (!/\S+@\S+\.\S+/.test(value)) return "Invalid email format";
+    return undefined;
+  };
+
+  const handleSubmit = () => {
+    const validationError = validateEmail(email);
+    if (validationError) {
+      setError(validationError);
+    } else {
+      setError('');
+      console.log('Form submitted with email:', email);
+    }
+  };
+
+  return (
+    <div className="p-6 space-y-4">
+      <h2 className="text-xl font-semibold">Example Form</h2>
+      
+      <ExpInputField
+        label="Email Address"
+        hint="Enter your email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        hasError={!!error}
+        validator={validateEmail}
+        height={48}
+        suffixIcon={<Search className="w-4 h-4 text-gray-400" />}
+      />
+      
+      <Button
+        label="Submit"
+        variant="primary"
+        styleType="solid"
+        size="base"
+        onClick={handleSubmit}
+      />
+    </div>
+  );
+};
+
+export default ExampleForm;
+```
+
+This documentation provides everything needed to implement the ExpInputField and Button components in a new Lovable project.
