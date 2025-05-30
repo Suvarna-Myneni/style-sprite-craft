@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { DesktopLeftNav } from "@/components/navigation/DesktopLeftNav";
 import { MobileNav } from "@/components/navigation/MobileNav";
 import { ResponsiveHeader } from "@/components/navigation/ResponsiveHeader";
+import { TrainingBanner } from "@/components/banner/TrainingBanner";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navigation as NavigationIcon } from "lucide-react";
@@ -78,6 +79,12 @@ const Navigation = () => {
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-6 py-12">
+        {/* Training Banner */}
+        <div className="mb-8">
+          <TrainingBanner />
+        </div>
+
+        {/* ... keep existing code (grid with navigation components) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Desktop Left Navigation */}
           <Card>
