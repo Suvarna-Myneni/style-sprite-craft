@@ -1,0 +1,62 @@
+
+.banner-tablet {
+    background-image: url('/lovable-uploads/6bc0b68e-3d91-4989-b74f-5ece1a97c320.png');
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 80px;
+    position: relative;
+    width: 100%;
+    max-width: 1096px;
+    border-radius: 8px;
+}
+
+.banner-tablet .button {
+    all: unset;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    position: absolute;
+    right: 2.22%;
+    top: 25%;
+    padding: 8px 16px;
+    width: 131px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.banner-tablet .text-wrapper {
+    all: unset;
+    box-sizing: border-box;
+    color: #1b489b;
+    font-family: var(--16-400-font-family);
+    font-size: var(--16-400-font-size);
+    font-style: var(--16-400-font-style);
+    font-weight: var(--16-400-font-weight);
+    letter-spacing: var(--16-400-letter-spacing);
+    line-height: var(--16-400-line-height);
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.banner-tablet .revenos-solutions {
+    color: #ffffff;
+    font-family: var(--24-400-font-family);
+    font-size: var(--24-400-font-size);
+    font-style: var(--24-400-font-style);
+    font-weight: var(--24-400-font-weight);
+    height: 30px;
+    left: 2.22%;
+    letter-spacing: var(--24-400-letter-spacing);
+    line-height: var(--24-400-line-height);
+    position: absolute;
+    top: 31.25%;
+    width: 474px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
