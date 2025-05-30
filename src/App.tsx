@@ -14,6 +14,7 @@ import Background from "./pages/Background";
 import Tags from "./pages/Tags";
 import TabsPage from "./pages/Tabs";
 import Navigation from "./pages/Navigation";
+import Banners from "./pages/Banners";
 import Buttons from "./pages/Buttons";
 import Checkboxes from "./pages/Checkboxes";
 import ExpInputFieldPage from "./pages/ExpInputField";
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/tags" element={<Tags />} />
           <Route path="/tabs" element={<TabsPage />} />
           <Route path="/navigation" element={<Navigation />} />
+          <Route path="/banners" element={<Banners />} />
           <Route path="/buttons" element={<Buttons />} />
           <Route path="/checkboxes" element={<Checkboxes />} />
           <Route path="/input-field" element={<ExpInputFieldPage />} />

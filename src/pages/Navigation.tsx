@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button";
 import { DesktopLeftNav } from "@/components/navigation/DesktopLeftNav";
 import { MobileNav } from "@/components/navigation/MobileNav";
 import { ResponsiveHeader } from "@/components/navigation/ResponsiveHeader";
-import { TrainingBanner } from "@/components/banner/TrainingBanner";
-import { BannersWebGraph } from "@/components/banner/BannersWebGraph";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navigation as NavigationIcon } from "lucide-react";
@@ -66,9 +64,9 @@ const Navigation = () => {
                       Checkboxes
                     </Button>
                   </Link>
-                  <Link to="/colors">
+                  <Link to="/banners">
                     <Button variant="outline" size="sm">
-                      Colors
+                      Banners
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
@@ -81,61 +79,6 @@ const Navigation = () => {
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-6 py-12">
-        {/* Banner Section */}
-        <div className="mb-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Banner Components</h3>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-            {/* Training Banner */}
-            <div className="lg:col-span-2">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">Training Banner</h4>
-              <TrainingBanner />
-            </div>
-            
-            {/* Web Graph Banner */}
-            <div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">Web Graph Banner</h4>
-              <BannersWebGraph />
-            </div>
-          </div>
-
-          {/* Banner Tile Section */}
-          <div className="mb-8">
-            <h4 className="text-lg font-semibold text-gray-900 mb-3">Banner Tiles</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Training Banner</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    A banner component with background image for training content with a call-to-action button.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Information Banner</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    A dark-themed banner for highlighting important information with navigation elements.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Banner Guidelines</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    Best practices for using banner components to highlight important content and actions.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-
         {/* Navigation Components */}
         <div className="mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">Navigation Components</h3>
