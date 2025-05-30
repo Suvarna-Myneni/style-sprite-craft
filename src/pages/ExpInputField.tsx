@@ -22,37 +22,69 @@ const ExpInputFieldPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <PageHeader 
-        title="ExpInputField" 
-        description="Advanced input field component with theme support and multiple sizes"
+        title="Input Fields" 
+        description="Comprehensive input field component with theme support and multiple configurations"
         badge="Components"
       />
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-6 py-8 space-y-12">
         
         {/* Anatomy Section */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Anatomy</h2>
-          <Card>
-            <CardContent className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-4">Component Structure:</h4>
-                  <ol className="list-decimal list-inside space-y-2 text-sm text-gray-600">
-                    <li><strong>Label:</strong> Positioned above the input box, indicates what information the user should provide.</li>
-                    <li><strong>Input Field:</strong> The main area where users type their response.</li>
-                    <li><strong>Placeholder Text:</strong> Light gray text that gives additional guidance on the expected input until the user begins typing.</li>
-                    <li><strong>Error/Success Message:</strong> Text that appears below the input field to describe any validations, issues or errors with the input.</li>
-                    <li><strong>Border:</strong></li>
-                    <li className="ml-4">• Default State: Gray or neutral border for standard input fields.</li>
-                    <li className="ml-4">• Error State: Yellow or highlighted border to indicate an issue with the input.</li>
-                  </ol>
+        <section>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Anatomy</h2>
+            <p className="text-gray-600 text-sm">Understanding the structure and components of input fields</p>
+          </div>
+          
+          <Card className="shadow-sm">
+            <CardContent className="p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-lg text-gray-900 mb-4">Component Structure</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-semibold mt-0.5">1</div>
+                      <div>
+                        <p className="font-medium text-gray-900">Label</p>
+                        <p className="text-sm text-gray-600">Positioned above the input, indicates expected information</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-semibold mt-0.5">2</div>
+                      <div>
+                        <p className="font-medium text-gray-900">Input Field</p>
+                        <p className="text-sm text-gray-600">Main typing area with configurable height and styling</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-semibold mt-0.5">3</div>
+                      <div>
+                        <p className="font-medium text-gray-900">Placeholder Text</p>
+                        <p className="text-sm text-gray-600">Hint text that disappears when user starts typing</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-semibold mt-0.5">4</div>
+                      <div>
+                        <p className="font-medium text-gray-900">Icons & Actions</p>
+                        <p className="text-sm text-gray-600">Optional suffix icons for actions like show/hide</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-semibold mt-0.5">5</div>
+                      <div>
+                        <p className="font-medium text-gray-900">Validation Messages</p>
+                        <p className="text-sm text-gray-600">Error or success feedback below the input</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
+                <div className="bg-gray-50 p-6 rounded-lg">
                   <ExpInputField
-                    label="Example Input"
+                    label="Example Input Field"
                     hint="Enter your text here"
                     isDarkMode={false}
                     height={48}
@@ -61,101 +93,121 @@ const ExpInputFieldPage = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </section>
 
         {/* Sizes Section */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Sizes</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <section>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Sizes</h2>
+            <p className="text-gray-600 text-sm">Different input field heights for various use cases</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Small Size */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Small (32px)</CardTitle>
-                <CardDescription>Compact input for tight layouts</CardDescription>
+            <Card className="shadow-sm">
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg">Small</CardTitle>
+                  <Badge variant="outline" className="text-xs">32px</Badge>
+                </div>
+                <CardDescription>Compact input for tight layouts and secondary fields</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ExpInputField
                   label="Small Input"
-                  hint="Text here"
+                  hint="Compact field"
                   height={32}
                   isDarkMode={false}
                 />
                 <ExpInputField
-                  label="Small with Icon"
+                  label="With Icon"
                   hint="Search..."
                   height={32}
-                  suffixIcon={<Search className="w-3 h-3" />}
+                  suffixIcon={<Search className="w-3 h-3 text-gray-400" />}
                   isDarkMode={false}
                 />
               </CardContent>
             </Card>
 
             {/* Medium Size */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Medium (48px)</CardTitle>
-                <CardDescription>Standard size for most use cases</CardDescription>
+            <Card className="shadow-sm border-2 border-blue-200">
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg">Medium</CardTitle>
+                  <Badge className="text-xs">48px</Badge>
+                </div>
+                <CardDescription>Standard size for most forms and applications</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ExpInputField
                   label="Medium Input"
-                  hint="Text here"
+                  hint="Standard field"
                   height={48}
                   isDarkMode={false}
                 />
                 <ExpInputField
-                  label="Medium with Icon"
+                  label="With Icon"
                   hint="Search..."
                   height={48}
-                  suffixIcon={<Search className="w-4 h-4" />}
+                  suffixIcon={<Search className="w-4 h-4 text-gray-400" />}
                   isDarkMode={false}
                 />
               </CardContent>
             </Card>
 
             {/* Large Size */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Large (64px)</CardTitle>
-                <CardDescription>Prominent input for important fields</CardDescription>
+            <Card className="shadow-sm">
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg">Large</CardTitle>
+                  <Badge variant="outline" className="text-xs">64px</Badge>
+                </div>
+                <CardDescription>Prominent input for important or primary fields</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ExpInputField
                   label="Large Input"
-                  hint="Text here"
+                  hint="Prominent field"
                   height={64}
                   isDarkMode={false}
                 />
                 <ExpInputField
-                  label="Large with Icon"
+                  label="With Icon"
                   hint="Search..."
                   height={64}
-                  suffixIcon={<Search className="w-5 h-5" />}
+                  suffixIcon={<Search className="w-5 h-5 text-gray-400" />}
                   isDarkMode={false}
                 />
               </CardContent>
             </Card>
           </div>
-        </div>
+        </section>
 
         {/* States Section */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">States</h2>
+        <section>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">States</h2>
+            <p className="text-gray-600 text-sm">Different visual states for various interaction scenarios</p>
+          </div>
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             {/* Light Theme States */}
-            <Card>
+            <Card className="shadow-sm">
               <CardHeader>
-                <CardTitle className="text-xl">Light Theme States</CardTitle>
+                <CardTitle className="text-xl flex items-center space-x-2">
+                  <span>Light Theme</span>
+                  <Badge variant="outline">Default</Badge>
+                </CardTitle>
                 <CardDescription>Various states in light mode</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="font-semibold mb-3">Default</h4>
+                  <h4 className="font-semibold mb-3 text-gray-700">Default State</h4>
                   <ExpInputField
-                    label="Label"
-                    hint="Text here"
+                    label="Email Address"
+                    hint="Enter your email"
                     value={lightValue}
                     onChange={(e) => setLightValue(e.target.value)}
                     isDarkMode={false}
@@ -163,32 +215,32 @@ const ExpInputFieldPage = () => {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-3">Error State</h4>
+                  <h4 className="font-semibold mb-3 text-gray-700">Error State</h4>
                   <ExpInputField
-                    label="Label"
-                    hint="Text here"
+                    label="Email Address"
+                    hint="Enter your email"
                     hasError={true}
-                    validator={() => "Error Message"}
+                    validator={() => "Please enter a valid email address"}
                     isDarkMode={false}
                   />
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-3">Success State</h4>
+                  <h4 className="font-semibold mb-3 text-gray-700">Success State</h4>
                   <ExpInputField
-                    label="Label"
-                    hint="Text here"
-                    value="Valid input"
+                    label="Email Address"
+                    hint="Enter your email"
+                    value="user@example.com"
                     isDarkMode={false}
                   />
-                  <span className="text-xs text-green-600 mt-1 block">Success</span>
+                  <span className="text-xs text-green-600 mt-1 block">✓ Email is valid</span>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-3">Disabled State</h4>
+                  <h4 className="font-semibold mb-3 text-gray-700">Disabled State</h4>
                   <ExpInputField
-                    label="Label"
-                    hint="Text here"
+                    label="Email Address"
+                    hint="Field is disabled"
                     disabled={true}
                     isDarkMode={false}
                   />
@@ -197,17 +249,20 @@ const ExpInputFieldPage = () => {
             </Card>
 
             {/* Dark Theme States */}
-            <Card>
+            <Card className="shadow-sm">
               <CardHeader>
-                <CardTitle className="text-xl">Dark Theme States</CardTitle>
+                <CardTitle className="text-xl flex items-center space-x-2">
+                  <span>Dark Theme</span>
+                  <Badge variant="secondary">Dark</Badge>
+                </CardTitle>
                 <CardDescription>Various states in dark mode</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6 bg-gray-900 rounded-lg p-6">
+              <CardContent className="bg-gray-900 rounded-lg p-6 space-y-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-white">Default</h4>
+                  <h4 className="font-semibold mb-3 text-white">Default State</h4>
                   <ExpInputField
-                    label="Label"
-                    hint="Text here"
+                    label="Email Address"
+                    hint="Enter your email"
                     value={darkValue}
                     onChange={(e) => setDarkValue(e.target.value)}
                     isDarkMode={true}
@@ -217,10 +272,10 @@ const ExpInputFieldPage = () => {
                 <div>
                   <h4 className="font-semibold mb-3 text-white">Error State</h4>
                   <ExpInputField
-                    label="Label"
-                    hint="Text here"
+                    label="Email Address"
+                    hint="Enter your email"
                     hasError={true}
-                    validator={() => "Error Message"}
+                    validator={() => "Please enter a valid email address"}
                     isDarkMode={true}
                   />
                 </div>
@@ -228,19 +283,19 @@ const ExpInputFieldPage = () => {
                 <div>
                   <h4 className="font-semibold mb-3 text-white">Success State</h4>
                   <ExpInputField
-                    label="Label"
-                    hint="Text here"
-                    value="Valid input"
+                    label="Email Address"
+                    hint="Enter your email"
+                    value="user@example.com"
                     isDarkMode={true}
                   />
-                  <span className="text-xs text-green-400 mt-1 block">Success</span>
+                  <span className="text-xs text-green-400 mt-1 block">✓ Email is valid</span>
                 </div>
 
                 <div>
                   <h4 className="font-semibold mb-3 text-white">Disabled State</h4>
                   <ExpInputField
-                    label="Label"
-                    hint="Text here"
+                    label="Email Address"
+                    hint="Field is disabled"
                     disabled={true}
                     isDarkMode={true}
                   />
@@ -248,15 +303,20 @@ const ExpInputFieldPage = () => {
               </CardContent>
             </Card>
           </div>
-        </div>
+        </section>
 
         {/* Advanced Examples */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Advanced Examples</h2>
+        <section>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Advanced Examples</h2>
+            <p className="text-gray-600 text-sm">Interactive features and custom implementations</p>
+          </div>
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Card>
+            <Card className="shadow-sm">
               <CardHeader>
                 <CardTitle className="text-lg">Interactive Features</CardTitle>
+                <CardDescription>Fields with dynamic behavior and validation</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
@@ -269,7 +329,7 @@ const ExpInputFieldPage = () => {
                       <button
                         type="button"
                         onClick={() => setPasswordVisible(!passwordVisible)}
-                        className="text-gray-500 hover:text-gray-700"
+                        className="text-gray-500 hover:text-gray-700 transition-colors"
                       >
                         {passwordVisible ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                       </button>
@@ -279,7 +339,7 @@ const ExpInputFieldPage = () => {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-3">Email Validation</h4>
+                  <h4 className="font-semibold mb-3">Real-time Validation</h4>
                   <ExpInputField
                     label="Email Address"
                     hint="Enter your email"
@@ -293,9 +353,10 @@ const ExpInputFieldPage = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="shadow-sm">
               <CardHeader>
                 <CardTitle className="text-lg">Custom Styling</CardTitle>
+                <CardDescription>Fields with custom appearance and behavior</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
@@ -314,26 +375,31 @@ const ExpInputFieldPage = () => {
                     label="Quick Search"
                     hint="Press Enter to search"
                     onSubmittedAction={(value) => alert(`Searching for: ${value}`)}
-                    suffixIcon={<Search className="w-4 h-4" />}
+                    suffixIcon={<Search className="w-4 h-4 text-gray-400" />}
                     isDarkMode={false}
                   />
                 </div>
               </CardContent>
             </Card>
           </div>
-        </div>
+        </section>
 
         {/* Implementation Guide */}
-        <div className="mt-12">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Implementation Guide</h3>
+        <section>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Implementation</h2>
+            <p className="text-gray-600 text-sm">Code examples and usage patterns</p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card>
+            <Card className="shadow-sm">
               <CardHeader>
                 <CardTitle className="text-lg">Basic Usage</CardTitle>
+                <CardDescription>Simple input field implementation</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="bg-gray-100 p-4 rounded-lg">
-                  <pre className="text-sm overflow-x-auto">
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <pre className="text-sm overflow-x-auto text-gray-800">
 {`<ExpInputField
   label="Email"
   hint="Enter your email"
@@ -346,13 +412,14 @@ const ExpInputFieldPage = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="shadow-sm">
               <CardHeader>
                 <CardTitle className="text-lg">With Validation</CardTitle>
+                <CardDescription>Input with error handling and validation</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="bg-gray-100 p-4 rounded-lg">
-                  <pre className="text-sm overflow-x-auto">
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <pre className="text-sm overflow-x-auto text-gray-800">
 {`<ExpInputField
   label="Email"
   hint="Enter your email"
@@ -370,84 +437,94 @@ const ExpInputFieldPage = () => {
               </CardContent>
             </Card>
           </div>
-        </div>
+        </section>
 
         {/* Props Documentation */}
-        <div className="mt-12">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Props</h3>
-          <Card>
-            <CardContent className="p-6">
+        <section>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">API Reference</h2>
+            <p className="text-gray-600 text-sm">Complete list of available props and their descriptions</p>
+          </div>
+          
+          <Card className="shadow-sm">
+            <CardContent className="p-0">
               <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b">
-                      <th className="text-left py-2 px-4 font-semibold">Prop</th>
-                      <th className="text-left py-2 px-4 font-semibold">Type</th>
-                      <th className="text-left py-2 px-4 font-semibold">Default</th>
-                      <th className="text-left py-2 px-4 font-semibold">Description</th>
+                <table className="w-full">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className="text-left py-4 px-6 font-semibold text-gray-900">Prop</th>
+                      <th className="text-left py-4 px-6 font-semibold text-gray-900">Type</th>
+                      <th className="text-left py-4 px-6 font-semibold text-gray-900">Default</th>
+                      <th className="text-left py-4 px-6 font-semibold text-gray-900">Description</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr className="border-b">
-                      <td className="py-2 px-4 font-mono">label</td>
-                      <td className="py-2 px-4">string</td>
-                      <td className="py-2 px-4">"Label"</td>
-                      <td className="py-2 px-4">Label text for the input field</td>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr className="hover:bg-gray-50">
+                      <td className="py-4 px-6 font-mono text-sm text-blue-600">label</td>
+                      <td className="py-4 px-6 text-sm text-gray-600">string</td>
+                      <td className="py-4 px-6 text-sm text-gray-500">"Label"</td>
+                      <td className="py-4 px-6 text-sm text-gray-700">Label text displayed above the input field</td>
                     </tr>
-                    <tr className="border-b">
-                      <td className="py-2 px-4 font-mono">hint</td>
-                      <td className="py-2 px-4">string</td>
-                      <td className="py-2 px-4">"Text here"</td>
-                      <td className="py-2 px-4">Placeholder text</td>
+                    <tr className="hover:bg-gray-50">
+                      <td className="py-4 px-6 font-mono text-sm text-blue-600">hint</td>
+                      <td className="py-4 px-6 text-sm text-gray-600">string</td>
+                      <td className="py-4 px-6 text-sm text-gray-500">"Text here"</td>
+                      <td className="py-4 px-6 text-sm text-gray-700">Placeholder text shown when field is empty</td>
                     </tr>
-                    <tr className="border-b">
-                      <td className="py-2 px-4 font-mono">height</td>
-                      <td className="py-2 px-4">number</td>
-                      <td className="py-2 px-4">48</td>
-                      <td className="py-2 px-4">Height of the input field in pixels</td>
+                    <tr className="hover:bg-gray-50">
+                      <td className="py-4 px-6 font-mono text-sm text-blue-600">height</td>
+                      <td className="py-4 px-6 text-sm text-gray-600">number</td>
+                      <td className="py-4 px-6 text-sm text-gray-500">48</td>
+                      <td className="py-4 px-6 text-sm text-gray-700">Height of the input field in pixels (32, 48, 64)</td>
                     </tr>
-                    <tr className="border-b">
-                      <td className="py-2 px-4 font-mono">isDarkMode</td>
-                      <td className="py-2 px-4">boolean</td>
-                      <td className="py-2 px-4">false</td>
-                      <td className="py-2 px-4">Enable dark theme styling</td>
+                    <tr className="hover:bg-gray-50">
+                      <td className="py-4 px-6 font-mono text-sm text-blue-600">isDarkMode</td>
+                      <td className="py-4 px-6 text-sm text-gray-600">boolean</td>
+                      <td className="py-4 px-6 text-sm text-gray-500">false</td>
+                      <td className="py-4 px-6 text-sm text-gray-700">Enable dark theme styling</td>
                     </tr>
-                    <tr className="border-b">
-                      <td className="py-2 px-4 font-mono">hasError</td>
-                      <td className="py-2 px-4">boolean</td>
-                      <td className="py-2 px-4">false</td>
-                      <td className="py-2 px-4">Show error state styling</td>
+                    <tr className="hover:bg-gray-50">
+                      <td className="py-4 px-6 font-mono text-sm text-blue-600">hasError</td>
+                      <td className="py-4 px-6 text-sm text-gray-600">boolean</td>
+                      <td className="py-4 px-6 text-sm text-gray-500">false</td>
+                      <td className="py-4 px-6 text-sm text-gray-700">Show error state with red border and message</td>
                     </tr>
-                    <tr className="border-b">
-                      <td className="py-2 px-4 font-mono">borderRadius</td>
-                      <td className="py-2 px-4">number</td>
-                      <td className="py-2 px-4">8</td>
-                      <td className="py-2 px-4">Border radius in pixels</td>
+                    <tr className="hover:bg-gray-50">
+                      <td className="py-4 px-6 font-mono text-sm text-blue-600">borderRadius</td>
+                      <td className="py-4 px-6 text-sm text-gray-600">number</td>
+                      <td className="py-4 px-6 text-sm text-gray-500">8</td>
+                      <td className="py-4 px-6 text-sm text-gray-700">Border radius in pixels for custom styling</td>
                     </tr>
-                    <tr className="border-b">
-                      <td className="py-2 px-4 font-mono">suffixIcon</td>
-                      <td className="py-2 px-4">ReactNode</td>
-                      <td className="py-2 px-4">-</td>
-                      <td className="py-2 px-4">Icon to display on the right side</td>
+                    <tr className="hover:bg-gray-50">
+                      <td className="py-4 px-6 font-mono text-sm text-blue-600">suffixIcon</td>
+                      <td className="py-4 px-6 text-sm text-gray-600">ReactNode</td>
+                      <td className="py-4 px-6 text-sm text-gray-500">-</td>
+                      <td className="py-4 px-6 text-sm text-gray-700">Icon or component displayed on the right side</td>
                     </tr>
-                    <tr className="border-b">
-                      <td className="py-2 px-4 font-mono">validator</td>
-                      <td className="py-2 px-4">function</td>
-                      <td className="py-2 px-4">-</td>
-                      <td className="py-2 px-4">Validation function returning error message</td>
+                    <tr className="hover:bg-gray-50">
+                      <td className="py-4 px-6 font-mono text-sm text-blue-600">validator</td>
+                      <td className="py-4 px-6 text-sm text-gray-600">function</td>
+                      <td className="py-4 px-6 text-sm text-gray-500">-</td>
+                      <td className="py-4 px-6 text-sm text-gray-700">Function returning error message for validation</td>
                     </tr>
-                    <tr>
-                      <td className="py-2 px-4 font-mono">onSubmittedAction</td>
-                      <td className="py-2 px-4">function</td>
-                      <td className="py-2 px-4">-</td>
-                      <td className="py-2 px-4">Callback when Enter key is pressed</td>
+                    <tr className="hover:bg-gray-50">
+                      <td className="py-4 px-6 font-mono text-sm text-blue-600">onSubmittedAction</td>
+                      <td className="py-4 px-6 text-sm text-gray-600">function</td>
+                      <td className="py-4 px-6 text-sm text-gray-500">-</td>
+                      <td className="py-4 px-6 text-sm text-gray-700">Callback function triggered when Enter key is pressed</td>
+                    </tr>
+                    <tr className="hover:bg-gray-50">
+                      <td className="py-4 px-6 font-mono text-sm text-blue-600">disabled</td>
+                      <td className="py-4 px-6 text-sm text-gray-600">boolean</td>
+                      <td className="py-4 px-6 text-sm text-gray-500">false</td>
+                      <td className="py-4 px-6 text-sm text-gray-700">Disable user interaction with the input field</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </CardContent>
           </Card>
-        </div>
+        </section>
       </div>
     </div>
   );
