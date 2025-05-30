@@ -1,67 +1,81 @@
 
 .banners-web-graph {
-    align-items: flex-start;
-    background-color: #3d3f50;
-    border-radius: 8px;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
-    gap: 16px;
-    height: 124px;
-    overflow: hidden;
+    align-items: flex-start;
     padding: 16px;
-    position: relative;
-    width: 100%;
-    max-width: 520px;
+    gap: 16px;
+    width: 520px;
+    height: 124px;
+    background: #3D3F50;
+    border-radius: 8px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
 .banners-web-graph .frame {
-    align-items: flex-start;
-    align-self: stretch;
     display: flex;
-    flex: 0 0 auto;
     flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
     gap: 4px;
-    position: relative;
-    width: 100%;
+    width: 488px;
+    height: 68px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
 }
 
 .banners-web-graph .div {
-    align-items: center;
     display: flex;
-    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
     gap: 10px;
-    position: relative;
     width: 488px;
+    height: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .banners-web-graph .navigation {
-    color: #ffffff;
-    flex: 1;
-    font-family: var(--16-600-font-family);
-    font-size: var(--16-600-font-size);
-    font-style: var(--16-600-font-style);
-    font-weight: var(--16-600-font-weight);
-    letter-spacing: var(--16-600-letter-spacing);
-    line-height: var(--16-600-line-height);
-    margin-top: -1.00px;
-    position: relative;
-    margin: 0;
-}
-
-.banners-web-graph .text-wrapper {
-    color: #ffffff;
-    font-family: var(--14-400-font-family);
-    font-size: var(--14-400-font-size);
-    font-style: var(--14-400-font-style);
-    font-weight: var(--14-400-font-weight);
-    letter-spacing: var(--14-400-letter-spacing);
-    line-height: var(--14-400-line-height);
-    position: relative;
-    width: 379px;
+    width: 454px;
+    height: 24px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
     margin: 0;
 }
 
 .banners-web-graph .arrow-forward {
-    color: #ffffff;
-    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #FFFFFF;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.banners-web-graph .text-wrapper {
+    width: 379px;
+    height: 40px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0;
 }
