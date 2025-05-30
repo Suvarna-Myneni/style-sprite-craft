@@ -2,46 +2,67 @@
 .mobile-healthcare-banner {
     position: relative;
     width: 343px;
-    height: 134px;
-    background: url('/lovable-uploads/be03b484-2964-4048-acc7-1a4cb66c0cfc.png');
+    height: 64px;
+    background: url('/lovable-uploads/d10f6f78-b555-49f6-98c3-2e7c3822e8dc.png');
     background-size: cover;
     background-position: center;
     border-radius: 8px;
-    border: 1px solid #E7E7E9;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 20px;
+    padding: 0;
 }
 
 .healthcare-content {
-    flex: 1;
-    padding-right: 16px;
+    position: absolute;
+    left: 4.66%;
+    right: 51.02%;
+    top: 34.38%;
+    bottom: 34.38%;
+    display: flex;
+    align-items: center;
 }
 
 .healthcare-title {
     font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.03px;
     color: #FFFFFF;
     margin: 0;
 }
 
 .healthcare-button {
+    position: absolute;
+    left: 63.85%;
+    right: 6.41%;
+    top: 21.88%;
+    bottom: 20.31%;
     background: #FFFFFF;
-    border-radius: 8px;
-    padding: 12px 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: opacity 0.2s ease;
 }
 
 .healthcare-button span {
     font-family: 'Roboto', sans-serif;
+    font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1px;
+    text-transform: capitalize;
     color: #1B489B;
 }
 
