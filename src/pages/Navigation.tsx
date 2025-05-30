@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -83,9 +84,9 @@ const Navigation = () => {
         {/* Banner Section */}
         <div className="mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">Banner Components</h3>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
             {/* Training Banner */}
-            <div>
+            <div className="lg:col-span-2">
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Training Banner</h4>
               <TrainingBanner />
             </div>
@@ -96,110 +97,90 @@ const Navigation = () => {
               <BannersWebGraph />
             </div>
           </div>
+
+          {/* Banner Tile Section */}
+          <div className="mb-8">
+            <h4 className="text-lg font-semibold text-gray-900 mb-3">Banner Tiles</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Training Banner</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>
+                    A banner component with background image for training content with a call-to-action button.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Information Banner</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>
+                    A dark-themed banner for highlighting important information with navigation elements.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Banner Guidelines</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>
+                    Best practices for using banner components to highlight important content and actions.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
 
-        {/* ... keep existing code (grid with navigation components) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Desktop Left Navigation */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Desktop Left Navigation</CardTitle>
-              <CardDescription>
-                A vertical navigation component designed for desktop applications with a dark theme and hover states.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="border rounded-lg overflow-hidden">
-                <DesktopLeftNav />
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Mobile Navigation */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Mobile Navigation</CardTitle>
-              <CardDescription>
-                A responsive mobile navigation menu with slide-out drawer and touch-friendly interface.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="border rounded-lg p-4 bg-gray-50">
-                <div className="flex items-center justify-between bg-white p-3 rounded border">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-6 h-6 rounded bg-[#0c0f24] flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">eXp</span>
-                    </div>
-                    <span className="text-sm font-medium">Mobile Demo</span>
-                  </div>
-                  <MobileNav />
+        {/* Navigation Components */}
+        <div className="mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">Navigation Components</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Desktop Left Navigation */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl">Desktop Left Navigation</CardTitle>
+                <CardDescription>
+                  A vertical navigation component designed for desktop applications with a dark theme and hover states.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="border rounded-lg overflow-hidden">
+                  <DesktopLeftNav />
                 </div>
-                <p className="text-xs text-gray-500 mt-2">
-                  Click the menu icon to see the mobile navigation
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
 
-          {/* Navigation Guidelines */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Navigation Guidelines</CardTitle>
-              <CardDescription>
-                Best practices for implementing navigation components in your application.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Visual Hierarchy</h4>
-                <p className="text-sm text-gray-600">
-                  Use clear visual hierarchy with active states, hover effects, and consistent spacing to guide users through the navigation.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Responsive Design</h4>
-                <p className="text-sm text-gray-600">
-                  Adapt navigation patterns for different screen sizes, from desktop sidebars to mobile hamburger menus.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Accessibility</h4>
-                <p className="text-sm text-gray-600">
-                  Ensure keyboard navigation, proper ARIA labels, and sufficient color contrast for all navigation elements.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Mobile Features */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Mobile Features</CardTitle>
-              <CardDescription>
-                Key features of the mobile navigation component.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Touch-Friendly</h4>
-                <p className="text-sm text-gray-600">
-                  Large touch targets and smooth animations optimized for mobile devices.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Slide-Out Drawer</h4>
-                <p className="text-sm text-gray-600">
-                  Elegant slide-out drawer that preserves screen real estate while providing easy access to navigation.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Consistent Branding</h4>
-                <p className="text-sm text-gray-600">
-                  Maintains the same dark theme and branding as the desktop navigation for consistency.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+            {/* Mobile Navigation */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl">Mobile Navigation</CardTitle>
+                <CardDescription>
+                  A responsive mobile navigation menu with slide-out drawer and touch-friendly interface.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="border rounded-lg p-4 bg-gray-50">
+                  <div className="flex items-center justify-between bg-white p-3 rounded border">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-6 h-6 rounded bg-[#0c0f24] flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">eXp</span>
+                      </div>
+                      <span className="text-sm font-medium">Mobile Demo</span>
+                    </div>
+                    <MobileNav />
+                  </div>
+                  <p className="text-xs text-gray-500 mt-2">
+                    Click the menu icon to see the mobile navigation
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         {/* Features */}

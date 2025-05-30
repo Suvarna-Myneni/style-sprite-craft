@@ -31,7 +31,7 @@
     flex: 0 0 auto;
     gap: 10px;
     position: relative;
-    width: 100%;
+    width: 488px;
 }
 
 .banners-web-graph .navigation {
@@ -57,6 +57,7 @@
     letter-spacing: var(--14-400-letter-spacing);
     line-height: var(--14-400-line-height);
     position: relative;
+    width: 379px;
     margin: 0;
 }
 
