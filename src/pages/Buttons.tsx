@@ -23,6 +23,53 @@ const Buttons = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-12">
+        {/* Color Variants */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Button Variants</CardTitle>
+            <CardDescription>Different color variants for various contexts</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-medium mb-3">Primary</h4>
+                <div className="flex items-center gap-4 flex-wrap">
+                  <Button variant="primary" styleType="solid" onClick={() => console.log("Primary solid clicked!")} />
+                  <Button variant="primary" styleType="outline" onClick={() => console.log("Primary outline clicked!")} />
+                  <Button variant="primary" styleType="ghost" onClick={() => console.log("Primary ghost clicked!")} />
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-medium mb-3">Secondary</h4>
+                <div className="flex items-center gap-4 flex-wrap">
+                  <Button variant="secondary" styleType="solid" onClick={() => console.log("Secondary solid clicked!")} />
+                  <Button variant="secondary" styleType="outline" onClick={() => console.log("Secondary outline clicked!")} />
+                  <Button variant="secondary" styleType="ghost" onClick={() => console.log("Secondary ghost clicked!")} />
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-medium mb-3">Success</h4>
+                <div className="flex items-center gap-4 flex-wrap">
+                  <Button variant="success" styleType="solid" onClick={() => console.log("Success solid clicked!")} />
+                  <Button variant="success" styleType="outline" onClick={() => console.log("Success outline clicked!")} />
+                  <Button variant="success" styleType="ghost" onClick={() => console.log("Success ghost clicked!")} />
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-medium mb-3">Warning</h4>
+                <div className="flex items-center gap-4 flex-wrap">
+                  <Button variant="warning" styleType="solid" onClick={() => console.log("Warning solid clicked!")} />
+                  <Button variant="warning" styleType="outline" onClick={() => console.log("Warning outline clicked!")} />
+                  <Button variant="warning" styleType="ghost" onClick={() => console.log("Warning ghost clicked!")} />
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Sizes */}
         <Card className="mb-8">
           <CardHeader>
@@ -51,39 +98,6 @@ const Buttons = () => {
                 size="large"
                 styleType="solid"
                 onClick={() => console.log("Large clicked!")}
-              />
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Style Types */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>Button Style Types</CardTitle>
-            <CardDescription>Different visual treatments for various contexts</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-center gap-4 flex-wrap">
-              <Button
-                label="Solid"
-                variant="primary"
-                size="base"
-                styleType="solid"
-                onClick={() => console.log("Solid clicked!")}
-              />
-              <Button
-                label="Outline"
-                variant="primary"
-                size="base"
-                styleType="outline"
-                onClick={() => console.log("Outline clicked!")}
-              />
-              <Button
-                label="Ghost"
-                variant="primary"
-                size="base"
-                styleType="ghost"
-                onClick={() => console.log("Ghost clicked!")}
               />
             </div>
           </CardContent>
@@ -153,65 +167,43 @@ const Buttons = () => {
           </CardContent>
         </Card>
 
-        {/* Usage Examples */}
+        {/* Complete Matrix Example */}
         <Card>
           <CardHeader>
-            <CardTitle>Usage Examples</CardTitle>
-            <CardDescription>Common button combinations in real scenarios</CardDescription>
+            <CardTitle>Complete Button Matrix</CardTitle>
+            <CardDescription>All variants, sizes, and styles combinations</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-6">
-              <div>
-                <h4 className="font-medium mb-3">Form Actions</h4>
-                <div className="flex items-center gap-3">
-                  <Button
-                    label="Submit"
-                    variant="primary"
-                    size="base"
-                    styleType="solid"
-                    onClick={() => console.log("Submit clicked!")}
-                  />
-                  <Button
-                    label="Cancel"
-                    variant="primary"
-                    size="base"
-                    styleType="outline"
-                    onClick={() => console.log("Cancel clicked!")}
-                  />
+            <div className="space-y-8">
+              {(['primary', 'secondary', 'success', 'warning'] as const).map((variant) => (
+                <div key={variant}>
+                  <h4 className="font-medium mb-4 capitalize">{variant}</h4>
+                  <div className="space-y-4">
+                    {(['small', 'base', 'large'] as const).map((size) => (
+                      <div key={size} className="flex items-center gap-4 flex-wrap">
+                        <Button
+                          variant={variant}
+                          size={size}
+                          styleType="solid"
+                          onClick={() => console.log(`${variant} ${size} solid clicked!`)}
+                        />
+                        <Button
+                          variant={variant}
+                          size={size}
+                          styleType="outline"
+                          onClick={() => console.log(`${variant} ${size} outline clicked!`)}
+                        />
+                        <Button
+                          variant={variant}
+                          size={size}
+                          styleType="ghost"
+                          onClick={() => console.log(`${variant} ${size} ghost clicked!`)}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              
-              <div>
-                <h4 className="font-medium mb-3">Call to Action</h4>
-                <Button
-                  label="Get Started"
-                  variant="primary"
-                  size="large"
-                  styleType="solid"
-                  showRightIcon={true}
-                  onClick={() => console.log("Get Started clicked!")}
-                />
-              </div>
-              
-              <div>
-                <h4 className="font-medium mb-3">Secondary Actions</h4>
-                <div className="flex items-center gap-3">
-                  <Button
-                    label="Learn More"
-                    variant="primary"
-                    size="base"
-                    styleType="ghost"
-                    onClick={() => console.log("Learn More clicked!")}
-                  />
-                  <Button
-                    label="View Details"
-                    variant="primary"
-                    size="small"
-                    styleType="outline"
-                    onClick={() => console.log("View Details clicked!")}
-                  />
-                </div>
-              </div>
+              ))}
             </div>
           </CardContent>
         </Card>

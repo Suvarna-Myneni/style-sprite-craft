@@ -5,7 +5,7 @@ import { Plus, ArrowRight } from "lucide-react";
 
 interface ButtonProps {
   label?: string;
-  variant?: "primary";
+  variant?: "primary" | "secondary" | "success" | "warning";
   size?: "small" | "base" | "large";
   styleType?: "solid" | "outline" | "ghost";
   state?: "default" | "hover" | "disabled";
