@@ -10,8 +10,8 @@ export const BannersWebNeed = ({ className }: { className?: string }) => {
             <div className="content-frame">
                 <p className="charles-smith">Charles Smith</p>
                 <div className="contact-icons">
-                    <Mail className="contact-icon email-icon" />
-                    <Phone className="contact-icon call-icon" />
+                    <Mail className="contact-icon email-icon" size={24} />
+                    <Phone className="contact-icon call-icon" size={24} />
                 </div>
             </div>
         </div>
