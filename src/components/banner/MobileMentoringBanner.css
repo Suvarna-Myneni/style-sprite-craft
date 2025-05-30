@@ -2,53 +2,84 @@
 .mobile-mentoring-banner {
     position: relative;
     width: 343px;
-    height: 134px;
-    background: url('/lovable-uploads/29f320a2-6e3b-4bc0-8a96-6254316f2f64.png');
+    height: 86px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0.96%, rgba(0, 0, 0, 0.28) 100%), url('/lovable-uploads/0c2c0e18-fc67-41c0-8a04-facd939b7e8b.png');
     background-size: cover;
     background-position: center;
     border-radius: 8px;
-    border: 1px solid #E7E7E9;
     overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
-}
-
-.mentoring-content {
-    display: flex;
     flex-direction: column;
-    gap: 4px;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 6px;
 }
 
 .mentoring-title {
     font-family: 'Roboto', sans-serif;
+    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
-    color: #FFFFFF;
+    letter-spacing: -0.22px;
+    color: #E2E3E4;
     margin: 0;
+    width: 136px;
+    height: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+}
+
+.mentoring-bottom-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+    width: 311px;
+    height: 24px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
 }
 
 .mentoring-contact {
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.03px;
     color: #FFFFFF;
     margin: 0;
+    width: 239px;
+    height: 18px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
 }
 
 .mentoring-actions {
     display: flex;
     gap: 12px;
     align-items: center;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
 .mentoring-icon {
     color: #FFFFFF;
     cursor: pointer;
     transition: opacity 0.2s ease;
+    width: 24px;
+    height: 24px;
+    flex: none;
+    flex-grow: 0;
 }
 
 .mentoring-icon:hover {
