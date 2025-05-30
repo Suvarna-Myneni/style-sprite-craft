@@ -1,26 +1,16 @@
-
 import React from "react";
 import { Button } from "@/components/button/Button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { PageHeader } from "@/components/navigation/PageHeader";
 
 const Buttons = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      {/* Header */}
-      <div className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-4xl font-bold text-gray-900">Buttons</h1>
-              <p className="text-lg text-gray-600 mt-2">Interactive elements for user actions</p>
-            </div>
-            <Badge variant="secondary" className="text-sm px-4 py-2">
-              Component
-            </Badge>
-          </div>
-        </div>
-      </div>
+      <PageHeader 
+        title="Buttons" 
+        description="Interactive elements for user actions"
+        badge="Component"
+      />
 
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Color Variants */}
