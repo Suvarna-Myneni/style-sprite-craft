@@ -89,6 +89,43 @@ const Buttons = () => {
           </CardContent>
         </Card>
 
+        {/* With Icons */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Buttons with Icons</CardTitle>
+            <CardDescription>Buttons with optional left and right icons</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center gap-4 flex-wrap">
+              <Button
+                label="Add Item"
+                variant="primary"
+                size="base"
+                styleType="solid"
+                showLeftIcon={true}
+                onClick={() => console.log("Add clicked!")}
+              />
+              <Button
+                label="Continue"
+                variant="primary"
+                size="base"
+                styleType="solid"
+                showRightIcon={true}
+                onClick={() => console.log("Continue clicked!")}
+              />
+              <Button
+                label="Add & Continue"
+                variant="primary"
+                size="base"
+                styleType="solid"
+                showLeftIcon={true}
+                showRightIcon={true}
+                onClick={() => console.log("Add & Continue clicked!")}
+              />
+            </div>
+          </CardContent>
+        </Card>
+
         {/* States */}
         <Card className="mb-8">
           <CardHeader>
@@ -151,6 +188,7 @@ const Buttons = () => {
                   variant="primary"
                   size="large"
                   styleType="solid"
+                  showRightIcon={true}
                   onClick={() => console.log("Get Started clicked!")}
                 />
               </div>
