@@ -5,6 +5,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { EnhancedTags } from "@/components/tabs/EnhancedTags";
+import { TabWithRadius } from "@/components/tabs/TabWithRadius";
+import "@/components/tabs/enhanced-tags.css";
+import "@/components/tabs/tab-with-radius.css";
 
 const TabsPage = () => {
   const [activeBasicTab, setActiveBasicTab] = useState("tab1");
@@ -49,6 +53,144 @@ const TabsPage = () => {
                 Tabs are a navigation component that helps users switch between different views or sections of content within the same context. 
                 They allow for a clean and organized presentation of content by breaking it down into manageable pieces, while maintaining quick access to related views.
               </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Enhanced Design System Tags */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Enhanced Tag-Style Tabs</h2>
+          <Card>
+            <CardHeader>
+              <CardTitle>Design System Tag Components</CardTitle>
+              <CardDescription>Advanced tag components with customizable sizes, modes, and status variants</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-8">
+                {/* Size Examples */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-4">Tag Sizes</h4>
+                  <div className="flex flex-wrap gap-4 items-center">
+                    <EnhancedTags size="tiny" status="default" mode="light">Tiny</EnhancedTags>
+                    <EnhancedTags size="base" status="default" mode="light">Base</EnhancedTags>
+                    <EnhancedTags size="large" status="default" mode="light">Large</EnhancedTags>
+                  </div>
+                </div>
+
+                {/* Light Mode Status Examples */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-4">Light Mode Status Variants</h4>
+                  <div className="flex flex-wrap gap-4 items-center">
+                    <EnhancedTags status="default" mode="light">Default</EnhancedTags>
+                    <EnhancedTags status="primary" mode="light">Primary</EnhancedTags>
+                    <EnhancedTags status="warning" mode="light">Warning</EnhancedTags>
+                    <EnhancedTags status="success" mode="light">Success</EnhancedTags>
+                  </div>
+                </div>
+
+                {/* Dark Mode Status Examples */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-4">Dark Mode Status Variants</h4>
+                  <div className="flex flex-wrap gap-4 items-center">
+                    <EnhancedTags status="default" mode="dark">Default</EnhancedTags>
+                    <EnhancedTags status="primary" mode="dark">Primary</EnhancedTags>
+                    <EnhancedTags status="warning" mode="dark">Warning</EnhancedTags>
+                    <EnhancedTags status="success" mode="dark">Success</EnhancedTags>
+                  </div>
+                </div>
+
+                {/* Icon Configuration Examples */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-4">Icon Configuration Options</h4>
+                  <div className="flex flex-wrap gap-4 items-center">
+                    <EnhancedTags showLeftIcon={false} status="success" mode="light">No Left Icon</EnhancedTags>
+                    <EnhancedTags showRightIcon={false} status="warning" mode="light">No Right Icon</EnhancedTags>
+                    <EnhancedTags showLeftIcon={false} showRightIcon={false} status="primary" mode="light">Text Only</EnhancedTags>
+                  </div>
+                </div>
+
+                {/* Usage Example Code */}
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Usage Example</h4>
+                  <div className="bg-gray-100 rounded-lg p-4">
+                    <code className="text-sm text-gray-800">
+                      {`<EnhancedTags
+  className="status-success-size-6"
+  mode="dark"
+  size="large"
+  status="success"
+>
+  Custom Label
+</EnhancedTags>`}
+                    </code>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Rounded Corner Tabs */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Rounded Corner Tabs</h2>
+          <Card>
+            <CardHeader>
+              <CardTitle>Interactive Pill-style Tabs</CardTitle>
+              <CardDescription>Rounded tabs with smooth background transitions and interactive states</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-4">Default Rounded Tabs</h4>
+                  <TabWithRadius />
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-4">Custom Tab Labels</h4>
+                  <TabWithRadius 
+                    tabs={["Personal Notifications", "Group Notifications", "System Alerts"]}
+                    defaultActive={0}
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Original Basic Tabs */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Basic Tabs</h2>
+          <Card>
+            <CardHeader>
+              <CardTitle>Default Tab Style</CardTitle>
+              <CardDescription>Standard tabs with underline indicator for active state</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Tabs defaultValue="tab1" className="w-full">
+                <TabsList className="grid w-full grid-cols-3">
+                  <TabsTrigger value="tab1">Tab Active</TabsTrigger>
+                  <TabsTrigger value="tab2">Tab Inactive</TabsTrigger>
+                  <TabsTrigger value="tab3">Tab Inactive</TabsTrigger>
+                </TabsList>
+                <TabsContent value="tab1" className="mt-6">
+                  <div className="p-6 bg-gray-50 rounded-lg">
+                    <h3 className="text-lg font-semibold mb-2">Active Tab Content</h3>
+                    <p className="text-gray-600">This is the content for the active tab. It demonstrates how tab content changes when switching between tabs.</p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="tab2" className="mt-6">
+                  <div className="p-6 bg-gray-50 rounded-lg">
+                    <h3 className="text-lg font-semibold mb-2">Second Tab Content</h3>
+                    <p className="text-gray-600">Content for the second tab goes here.</p>
+                  </div>
+                </TabsContent>
+                <TabsContent value="tab3" className="mt-6">
+                  <div className="p-6 bg-gray-50 rounded-lg">
+                    <h3 className="text-lg font-semibold mb-2">Third Tab Content</h3>
+                    <p className="text-gray-600">Content for the third tab goes here.</p>
+                  </div>
+                </TabsContent>
+              </Tabs>
             </CardContent>
           </Card>
         </div>
@@ -131,72 +273,6 @@ const TabsPage = () => {
               </Card>
             ))}
           </div>
-        </div>
-
-        {/* Basic Tabs */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Basic Tabs</h2>
-          <Card>
-            <CardHeader>
-              <CardTitle>Default Tab Style</CardTitle>
-              <CardDescription>Standard tabs with underline indicator for active state</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Tabs defaultValue="tab1" className="w-full">
-                <TabsList className="grid w-full grid-cols-3">
-                  <TabsTrigger value="tab1">Tab Active</TabsTrigger>
-                  <TabsTrigger value="tab2">Tab Inactive</TabsTrigger>
-                  <TabsTrigger value="tab3">Tab Inactive</TabsTrigger>
-                </TabsList>
-                <TabsContent value="tab1" className="mt-6">
-                  <div className="p-6 bg-gray-50 rounded-lg">
-                    <h3 className="text-lg font-semibold mb-2">Active Tab Content</h3>
-                    <p className="text-gray-600">This is the content for the active tab. It demonstrates how tab content changes when switching between tabs.</p>
-                  </div>
-                </TabsContent>
-                <TabsContent value="tab2" className="mt-6">
-                  <div className="p-6 bg-gray-50 rounded-lg">
-                    <h3 className="text-lg font-semibold mb-2">Second Tab Content</h3>
-                    <p className="text-gray-600">Content for the second tab goes here.</p>
-                  </div>
-                </TabsContent>
-                <TabsContent value="tab3" className="mt-6">
-                  <div className="p-6 bg-gray-50 rounded-lg">
-                    <h3 className="text-lg font-semibold mb-2">Third Tab Content</h3>
-                    <p className="text-gray-600">Content for the third tab goes here.</p>
-                  </div>
-                </TabsContent>
-              </Tabs>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Rounded Tabs */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Rounded Tabs</h2>
-          <Card>
-            <CardHeader>
-              <CardTitle>Pill-style Tabs</CardTitle>
-              <CardDescription>Tabs with rounded corners for a softer appearance</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex space-x-1 bg-gray-100 p-1 rounded-full">
-                {["Tab Active", "Tab Inactive", "Tab Inactive"].map((tab, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveRoundedTab(`tab${index + 1}`)}
-                    className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                      activeRoundedTab === `tab${index + 1}`
-                        ? "bg-white text-[#1B489B] shadow-sm"
-                        : "text-gray-600 hover:text-gray-900"
-                    }`}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
         </div>
 
         {/* Filled Tabs */}
