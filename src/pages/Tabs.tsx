@@ -9,15 +9,12 @@ import { EnhancedTags } from "@/components/tabs/EnhancedTags";
 import { TabWithRadius } from "@/components/tabs/TabWithRadius";
 import "@/components/tabs/enhanced-tags.css";
 import "@/components/tabs/tab-with-radius.css";
-
 const TabsPage = () => {
   const [activeBasicTab, setActiveBasicTab] = useState("tab1");
   const [activeRoundedTab, setActiveRoundedTab] = useState("tab1");
   const [activeFilledTab, setActiveFilledTab] = useState("tab1");
   const [activeVerticalTab, setActiveVerticalTab] = useState("tab1");
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+  return <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-6 py-8">
@@ -58,77 +55,7 @@ const TabsPage = () => {
         </div>
 
         {/* Enhanced Design System Tags */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Enhanced Tag-Style Tabs</h2>
-          <Card>
-            <CardHeader>
-              <CardTitle>Design System Tag Components</CardTitle>
-              <CardDescription>Advanced tag components with customizable sizes, modes, and status variants</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-8">
-                {/* Size Examples */}
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-4">Tag Sizes</h4>
-                  <div className="flex flex-wrap gap-4 items-center">
-                    <EnhancedTags size="tiny" status="default" mode="light">Tiny</EnhancedTags>
-                    <EnhancedTags size="base" status="default" mode="light">Base</EnhancedTags>
-                    <EnhancedTags size="large" status="default" mode="light">Large</EnhancedTags>
-                  </div>
-                </div>
-
-                {/* Light Mode Status Examples */}
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-4">Light Mode Status Variants</h4>
-                  <div className="flex flex-wrap gap-4 items-center">
-                    <EnhancedTags status="default" mode="light">Default</EnhancedTags>
-                    <EnhancedTags status="primary" mode="light">Primary</EnhancedTags>
-                    <EnhancedTags status="warning" mode="light">Warning</EnhancedTags>
-                    <EnhancedTags status="success" mode="light">Success</EnhancedTags>
-                  </div>
-                </div>
-
-                {/* Dark Mode Status Examples */}
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-4">Dark Mode Status Variants</h4>
-                  <div className="flex flex-wrap gap-4 items-center">
-                    <EnhancedTags status="default" mode="dark">Default</EnhancedTags>
-                    <EnhancedTags status="primary" mode="dark">Primary</EnhancedTags>
-                    <EnhancedTags status="warning" mode="dark">Warning</EnhancedTags>
-                    <EnhancedTags status="success" mode="dark">Success</EnhancedTags>
-                  </div>
-                </div>
-
-                {/* Icon Configuration Examples */}
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-4">Icon Configuration Options</h4>
-                  <div className="flex flex-wrap gap-4 items-center">
-                    <EnhancedTags showLeftIcon={false} status="success" mode="light">No Left Icon</EnhancedTags>
-                    <EnhancedTags showRightIcon={false} status="warning" mode="light">No Right Icon</EnhancedTags>
-                    <EnhancedTags showLeftIcon={false} showRightIcon={false} status="primary" mode="light">Text Only</EnhancedTags>
-                  </div>
-                </div>
-
-                {/* Usage Example Code */}
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Usage Example</h4>
-                  <div className="bg-gray-100 rounded-lg p-4">
-                    <code className="text-sm text-gray-800">
-                      {`<EnhancedTags
-  className="status-success-size-6"
-  mode="dark"
-  size="large"
-  status="success"
->
-  Custom Label
-</EnhancedTags>`}
-                    </code>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        
 
         {/* Rounded Corner Tabs */}
         <div className="mb-16">
@@ -147,10 +74,7 @@ const TabsPage = () => {
                 
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-4">Custom Tab Labels</h4>
-                  <TabWithRadius 
-                    tabs={["Personal Notifications", "Group Notifications", "System Alerts"]}
-                    defaultActive={0}
-                  />
+                  <TabWithRadius tabs={["Personal Notifications", "Group Notifications", "System Alerts"]} defaultActive={0} />
                 </div>
               </div>
             </CardContent>
@@ -199,29 +123,22 @@ const TabsPage = () => {
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Principles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Clarity",
-                description: "Tabs should clearly indicate which section or view the user is currently in by making the active tab visually distinct."
-              },
-              {
-                title: "Feedback", 
-                description: "Active and inactive states should provide clear visual feedback, allowing users to understand which tab is selected."
-              },
-              {
-                title: "Consistency",
-                description: "Ensure that the style and placement of tabs remain consistent throughout the interface."
-              },
-              {
-                title: "Hierarchy",
-                description: "Tabs should be used to present top-level sections, helping users focus on primary categories."
-              },
-              {
-                title: "Responsiveness",
-                description: "Tabs should scale appropriately across different screen sizes while remaining functional."
-              }
-            ].map((principle) => (
-              <Card key={principle.title}>
+            {[{
+            title: "Clarity",
+            description: "Tabs should clearly indicate which section or view the user is currently in by making the active tab visually distinct."
+          }, {
+            title: "Feedback",
+            description: "Active and inactive states should provide clear visual feedback, allowing users to understand which tab is selected."
+          }, {
+            title: "Consistency",
+            description: "Ensure that the style and placement of tabs remain consistent throughout the interface."
+          }, {
+            title: "Hierarchy",
+            description: "Tabs should be used to present top-level sections, helping users focus on primary categories."
+          }, {
+            title: "Responsiveness",
+            description: "Tabs should scale appropriately across different screen sizes while remaining functional."
+          }].map(principle => <Card key={principle.title}>
                 <CardHeader>
                   <CardTitle className="text-lg text-[#1B489B]">{principle.title}</CardTitle>
                 </CardHeader>
@@ -230,8 +147,7 @@ const TabsPage = () => {
                     {principle.description}
                   </CardDescription>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
 
@@ -239,29 +155,22 @@ const TabsPage = () => {
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Anatomy</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "Tab Container",
-                description: "The outer box that holds all the individual tabs together, typically horizontally aligned. The container provides structure and allows for consistent spacing between tabs."
-              },
-              {
-                title: "Active Tab", 
-                description: "The tab currently selected by the user, visually distinct from other tabs. It highlights which view the user is in."
-              },
-              {
-                title: "Inactive Tabs",
-                description: "Tabs that are not selected, but are still available for interaction. These tabs should be clearly visible but less prominent compared to the active tab."
-              },
-              {
-                title: "Underline (Optional)",
-                description: "An underline below the active tab can act as an additional visual cue to indicate selection."
-              },
-              {
-                title: "Hover/Focus States",
-                description: "Interactive feedback for users when hovering over or focusing on a tab to indicate it's clickable or navigable."
-              }
-            ].map((anatomy) => (
-              <Card key={anatomy.title}>
+            {[{
+            title: "Tab Container",
+            description: "The outer box that holds all the individual tabs together, typically horizontally aligned. The container provides structure and allows for consistent spacing between tabs."
+          }, {
+            title: "Active Tab",
+            description: "The tab currently selected by the user, visually distinct from other tabs. It highlights which view the user is in."
+          }, {
+            title: "Inactive Tabs",
+            description: "Tabs that are not selected, but are still available for interaction. These tabs should be clearly visible but less prominent compared to the active tab."
+          }, {
+            title: "Underline (Optional)",
+            description: "An underline below the active tab can act as an additional visual cue to indicate selection."
+          }, {
+            title: "Hover/Focus States",
+            description: "Interactive feedback for users when hovering over or focusing on a tab to indicate it's clickable or navigable."
+          }].map(anatomy => <Card key={anatomy.title}>
                 <CardHeader>
                   <CardTitle className="text-lg text-[#1B489B]">{anatomy.title}</CardTitle>
                 </CardHeader>
@@ -270,8 +179,7 @@ const TabsPage = () => {
                     {anatomy.description}
                   </CardDescription>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
 
@@ -286,19 +194,9 @@ const TabsPage = () => {
             <CardContent>
               <div className="bg-slate-800 p-1 rounded-lg">
                 <div className="flex space-x-1">
-                  {["Tab Active", "Tab Inactive", "Tab Inactive"].map((tab, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setActiveFilledTab(`tab${index + 1}`)}
-                      className={`px-6 py-3 rounded-md text-sm font-medium transition-all ${
-                        activeFilledTab === `tab${index + 1}`
-                          ? "bg-white text-gray-900"
-                          : "text-gray-400 hover:text-white"
-                      }`}
-                    >
+                  {["Tab Active", "Tab Inactive", "Tab Inactive"].map((tab, index) => <button key={index} onClick={() => setActiveFilledTab(`tab${index + 1}`)} className={`px-6 py-3 rounded-md text-sm font-medium transition-all ${activeFilledTab === `tab${index + 1}` ? "bg-white text-gray-900" : "text-gray-400 hover:text-white"}`}>
                       {tab}
-                    </button>
-                  ))}
+                    </button>)}
                 </div>
               </div>
             </CardContent>
@@ -316,24 +214,10 @@ const TabsPage = () => {
             <CardContent>
               <div className="border-2 border-dashed border-purple-500 p-6 rounded-lg">
                 <div className="flex flex-col space-y-2">
-                  <button
-                    onClick={() => setActiveVerticalTab("tab1")}
-                    className={`px-4 py-3 text-left rounded-md text-sm font-medium transition-all ${
-                      activeVerticalTab === "tab1"
-                        ? "bg-[#1B489B] text-white"
-                        : "text-gray-600 hover:bg-gray-100"
-                    }`}
-                  >
+                  <button onClick={() => setActiveVerticalTab("tab1")} className={`px-4 py-3 text-left rounded-md text-sm font-medium transition-all ${activeVerticalTab === "tab1" ? "bg-[#1B489B] text-white" : "text-gray-600 hover:bg-gray-100"}`}>
                     Tab Active
                   </button>
-                  <button
-                    onClick={() => setActiveVerticalTab("tab2")}
-                    className={`px-4 py-3 text-left rounded-md text-sm font-medium transition-all ${
-                      activeVerticalTab === "tab2"
-                        ? "bg-[#1B489B] text-white"
-                        : "text-gray-600 hover:bg-gray-100"
-                    }`}
-                  >
+                  <button onClick={() => setActiveVerticalTab("tab2")} className={`px-4 py-3 text-left rounded-md text-sm font-medium transition-all ${activeVerticalTab === "tab2" ? "bg-[#1B489B] text-white" : "text-gray-600 hover:bg-gray-100"}`}>
                     Tab Inactive
                   </button>
                 </div>
@@ -496,8 +380,6 @@ const TabsPage = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default TabsPage;
