@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -18,7 +17,9 @@ import {
   Tag,
   Layers as TabsIcon,
   Navigation as NavigationIcon,
-  Edit
+  Edit,
+  CheckSquare,
+  Flag
 } from "lucide-react";
 
 const Index = () => {
@@ -56,6 +57,20 @@ const Index = () => {
       description: "Advanced input field components with theme support and validation",
       icon: Edit,
       path: "/input-field",
+      color: "bg-[#DC2626]"
+    },
+    {
+      title: "Checkbox",
+      description: "Checkbox components with various states and styling options",
+      icon: CheckSquare,
+      path: "/checkboxes",
+      color: "bg-[#7C3AED]"
+    },
+    {
+      title: "Banner",
+      description: "Banner components for highlighting important content and promotions",
+      icon: Flag,
+      path: "/banners",
       color: "bg-[#DC2626]"
     },
     {
