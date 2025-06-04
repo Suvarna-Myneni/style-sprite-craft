@@ -8,11 +8,11 @@ export const BannersWebGraph = () => {
         <div className="banners-web-graph">
             <div className="banner-content">
                 <div className="banner-header">
-                    <h3 className="banner-title">Navigation</h3>
+                    <h3 className="banner-title">Welcome to the new My eXp</h3>
                     <ArrowRight className="banner-arrow" size={24} />
                 </div>
                 <p className="banner-description">
-                    Navigation description text goes here to provide more information about this feature.
+                    These tiles will be used to help highlight new or important information for you.
                 </p>
             </div>
         </div>
