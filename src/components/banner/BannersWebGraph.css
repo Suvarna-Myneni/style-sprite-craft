@@ -14,7 +14,7 @@
     flex-grow: 0;
 }
 
-.banners-web-graph .frame {
+.banner-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -28,7 +28,7 @@
     flex-grow: 0;
 }
 
-.banners-web-graph .div {
+.banner-header {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -41,7 +41,7 @@
     flex-grow: 0;
 }
 
-.banners-web-graph .navigation {
+.banner-title {
     width: 454px;
     height: 24px;
     font-family: 'Roboto';
@@ -50,13 +50,13 @@
     font-size: 16px;
     line-height: 24px;
     color: #FFFFFF;
+    margin: 0;
     flex: none;
     order: 0;
     flex-grow: 1;
-    margin: 0;
 }
 
-.banners-web-graph .arrow-forward {
+.banner-arrow {
     width: 24px;
     height: 24px;
     color: #FFFFFF;
@@ -65,7 +65,7 @@
     flex-grow: 0;
 }
 
-.banners-web-graph .text-wrapper {
+.banner-description {
     width: 379px;
     height: 40px;
     font-family: 'Roboto';
@@ -74,8 +74,8 @@
     font-size: 14px;
     line-height: 20px;
     color: #FFFFFF;
+    margin: 0;
     flex: none;
     order: 1;
     flex-grow: 0;
-    margin: 0;
 }

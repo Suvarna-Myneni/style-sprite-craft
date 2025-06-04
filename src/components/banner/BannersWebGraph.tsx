@@ -1,20 +1,18 @@
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
 import "./BannersWebGraph.css";
+import { ArrowRight } from "lucide-react";
 
 export const BannersWebGraph = () => {
     return (
         <div className="banners-web-graph">
-            <div className="frame">
-                <div className="div">
-                    <p className="navigation">Welcome to the new My eXp</p>
-                    <ArrowRight className="arrow-forward" size={20} />
+            <div className="banner-content">
+                <div className="banner-header">
+                    <h3 className="banner-title">Navigation</h3>
+                    <ArrowRight className="banner-arrow" size={24} />
                 </div>
-
-                <p className="text-wrapper">
-                    These tiles will be used to help highlight new or important
-                    information for you.
+                <p className="banner-description">
+                    Navigation description text goes here to provide more information about this feature.
                 </p>
             </div>
         </div>
