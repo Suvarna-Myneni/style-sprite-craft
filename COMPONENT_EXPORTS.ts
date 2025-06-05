@@ -41,4 +41,4 @@ export { colorPalette } from './tokens/colors';
 export type { ButtonProps } from './components/button/Button';
 export type { ExpCheckboxProps } from './components/checkbox/ExpCheckbox';
 export type { ExpInputFieldProps } from './components/input/ExpInputField';
-export type { AvatarProps } from './components/avatar/Avatar';
+export type { DesignSystemAvatarProps } from './components/avatar/Avatar';

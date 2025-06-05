@@ -22,13 +22,13 @@ const avatarVariants = cva(
   }
 )
 
-export interface AvatarProps 
+export interface DesignSystemAvatarProps 
   extends React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>,
     VariantProps<typeof avatarVariants> {}
 
 const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
-  AvatarProps
+  DesignSystemAvatarProps
 >(({ className, size, ...props }, ref) => (
   <AvatarPrimitive.Root
     ref={ref}
@@ -66,4 +66,4 @@ const AvatarFallback = React.forwardRef<
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
 export { Avatar, AvatarImage, AvatarFallback }
-export type { AvatarProps }
+export type { DesignSystemAvatarProps }
