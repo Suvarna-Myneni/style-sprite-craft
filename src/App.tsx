@@ -20,6 +20,7 @@ import Checkboxes from "./pages/Checkboxes";
 import ExpInputFieldPage from "./pages/ExpInputField";
 import ProgressBar from "./pages/ProgressBar";
 import Documentation from "./pages/Documentation";
+import Avatars from "./pages/Avatars";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/checkboxes" element={<Checkboxes />} />
           <Route path="/input-field" element={<ExpInputFieldPage />} />
           <Route path="/progress-bar" element={<ProgressBar />} />
+          <Route path="/avatars" element={<Avatars />} />
           <Route path="/docs" element={<Documentation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

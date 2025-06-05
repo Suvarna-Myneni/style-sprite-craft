@@ -23,6 +23,12 @@ const Index = () => {
     path: "/icons",
     color: "bg-[#895D0B]"
   }, {
+    title: "Avatars",
+    description: "User profile pictures with fallback support and status indicators",
+    icon: Users,
+    path: "/avatars",
+    color: "bg-[#7C3AED]"
+  }, {
     title: "Buttons",
     description: "Interactive elements with various styles, sizes, and states",
     icon: Target,
