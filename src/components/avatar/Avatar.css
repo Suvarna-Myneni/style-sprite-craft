@@ -1,0 +1,60 @@
+
+/* Avatar Component Styles */
+.avatar-fallback {
+  background-color: var(--primary-300, #93A3CB);
+  color: var(--base-white, #FFFFFF);
+}
+
+.avatar-fallback-sm {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.avatar-fallback-md {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.avatar-fallback-lg {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.avatar-fallback-xl {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Hover effects */
+.avatar-interactive:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Status indicators */
+.avatar-status {
+  position: relative;
+}
+
+.avatar-status::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.avatar-status-online::after {
+  background-color: var(--success, #1E774A);
+}
+
+.avatar-status-away::after {
+  background-color: var(--warning, #895D0B);
+}
+
+.avatar-status-offline::after {
+  background-color: var(--disabled, #858791);
+}

@@ -17,6 +17,7 @@ export { ExpRadio } from './components/checkbox/ExpRadio';
 export { CheckboxTile } from './components/checkbox/CheckboxTile';
 export { ExpInputField } from './components/input/ExpInputField';
 export { ExpStepper } from './components/stepper/ExpStepper';
+export { Avatar, AvatarImage, AvatarFallback } from './components/avatar/Avatar';
 
 // Navigation Components
 export { PageHeader } from './components/navigation/PageHeader';
@@ -40,3 +41,4 @@ export { colorPalette } from './tokens/colors';
 export type { ButtonProps } from './components/button/Button';
 export type { ExpCheckboxProps } from './components/checkbox/ExpCheckbox';
 export type { ExpInputFieldProps } from './components/input/ExpInputField';
+export type { AvatarProps } from './components/avatar/Avatar';

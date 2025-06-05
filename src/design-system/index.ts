@@ -13,6 +13,7 @@ export { ExpCheckbox } from '../components/checkbox/ExpCheckbox';
 export { ExpRadio } from '../components/checkbox/ExpRadio';
 export { CheckboxTile } from '../components/checkbox/CheckboxTile';
 export { ExpStepper } from '../components/stepper/ExpStepper';
+export { Avatar, AvatarImage, AvatarFallback } from '../components/avatar/Avatar';
 
 // Design System Configuration
 export { designSystemConfig } from './config/tailwind-preset';
@@ -23,4 +24,5 @@ export const cssImports = [
   '../components/button/Button.css',
   '../components/checkbox/ExpCheckbox.css',
   '../components/checkbox/ExpRadio.css',
+  '../components/avatar/Avatar.css',
 ];
