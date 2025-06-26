@@ -1,7 +1,7 @@
 
 .tab-with-radius {
   align-items: flex-start;
-  background-color: #e9ecf4;
+  background-color: #E9ECF4;
   border-radius: 54px;
   display: inline-flex;
   flex-direction: column;
@@ -29,7 +29,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
-  color: #3d3f50;
+  color: #0C0F24;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -41,7 +41,7 @@
 .tab-component.active {
   background-color: #ffffff;
   color: #1B489B;
-  font-weight: 500;
+  font-weight: 600;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 

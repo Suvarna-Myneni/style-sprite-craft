@@ -32,13 +32,23 @@ export const EnhancedTags: React.FC<EnhancedTagsProps> = ({
   };
 
   const getIconColor = () => {
-    if (status === "default" && mode === "light") return "#3D3F50";
-    if (mode === "light" && status === "primary") return "#0C0F24";
-    if (mode === "light" && status === "warning") return "#895D0B";
-    if (status === "warning" && mode === "dark") return "#FFE1A4";
-    if (mode === "light" && status === "success") return "#1E774A";
-    if (status === "success" && mode === "dark") return "#CCF2DB";
-    return "#E9ECF4";
+    if (mode === "light") {
+      switch (status) {
+        case "default": return "#0C0F24";
+        case "primary": return "#1B489B";
+        case "warning": return "#895D0B";
+        case "success": return "#1E774A";
+        default: return "#0C0F24";
+      }
+    } else {
+      switch (status) {
+        case "default": return "#E9ECF4";
+        case "primary": return "#E9ECF4";
+        case "warning": return "#FFE1A4";
+        case "success": return "#CCF2DB";
+        default: return "#E9ECF4";
+      }
+    }
   };
 
   const iconSize = getIconSize();

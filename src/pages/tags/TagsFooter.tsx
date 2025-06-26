@@ -8,9 +8,9 @@ export const TagsFooter = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <Tag className="h-6 w-6 text-[#1B489B]" />
-            <span className="text-sm">Transaction Calculator Tags Component Guide</span>
+            <span className="text-sm font-roboto">Transaction Calculator Tags Component Guide</span>
           </div>
-          <div className="text-sm text-gray-400">
+          <div className="text-sm text-[#858791] font-roboto">
             Consistent labeling and categorization
           </div>
         </div>

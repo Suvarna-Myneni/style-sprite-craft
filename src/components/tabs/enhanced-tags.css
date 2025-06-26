@@ -39,36 +39,36 @@
 
 /* Color variants - Light mode */
 .enhanced-tags.default.light {
-  background-color: #e9ecf4;
+  background-color: #E9ECF4;
 }
 
 .enhanced-tags.primary.light {
-  background-color: #d4daea;
+  background-color: #D4DAEA;
 }
 
 .enhanced-tags.warning.light {
-  background-color: #ffe0a3;
+  background-color: #FFE1A4;
 }
 
 .enhanced-tags.success.light {
-  background-color: #ccf2db;
+  background-color: #CCF2DB;
 }
 
 /* Color variants - Dark mode */
 .enhanced-tags.default.dark {
-  background-color: #3d3f50;
+  background-color: #0C0F24;
 }
 
 .enhanced-tags.primary.dark {
-  background-color: #0c0f24;
+  background-color: #3D3F50;
 }
 
 .enhanced-tags.warning.dark {
-  background-color: #895d0b;
+  background-color: #895D0B;
 }
 
 .enhanced-tags.success.dark {
-  background-color: #1e774a;
+  background-color: #1E774A;
 }
 
 /* Typography - Base */
@@ -89,39 +89,39 @@
 .enhanced-tags.tiny .enhanced-tags-text-wrapper {
   font-size: 12px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 16px;
 }
 
 /* Text colors - Light mode */
 .enhanced-tags.default.light .enhanced-tags-text-wrapper {
-  color: #3d3f50;
+  color: #0C0F24;
 }
 
 .enhanced-tags.primary.light .enhanced-tags-text-wrapper {
-  color: #0c0f24;
+  color: #1B489B;
 }
 
 .enhanced-tags.warning.light .enhanced-tags-text-wrapper {
-  color: #895d0b;
+  color: #895D0B;
 }
 
 .enhanced-tags.success.light .enhanced-tags-text-wrapper {
-  color: #1e774a;
+  color: #1E774A;
 }
 
 /* Text colors - Dark mode */
 .enhanced-tags.default.dark .enhanced-tags-text-wrapper {
-  color: #e9ecf4;
+  color: #E9ECF4;
 }
 
 .enhanced-tags.primary.dark .enhanced-tags-text-wrapper {
-  color: #e9ecf4;
+  color: #E9ECF4;
 }
 
 .enhanced-tags.warning.dark .enhanced-tags-text-wrapper {
-  color: #ffe0a3;
+  color: #FFE1A4;
 }
 
 .enhanced-tags.success.dark .enhanced-tags-text-wrapper {
-  color: #ccf2db;
+  color: #CCF2DB;
 }
