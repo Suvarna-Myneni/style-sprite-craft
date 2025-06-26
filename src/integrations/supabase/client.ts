@@ -9,3 +9,23 @@ const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiO
 // import { supabase } from "@/integrations/supabase/client";
 
 export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+// Import the superbase bucket which is design guidelines
+
+const DocumentViewer = () => {
+  const documentUrl = 'https://egtzbkrztqjzutrgrlaj.supabase.co/storage/v1/object/public/ds//Design%20system%20updated.docx';
+  
+  return (
+    <div className="bg-white rounded-lg p-6 shadow-lg">
+      <h3 className="text-xl font-semibold mb-4">Design System Documentation</h3>
+      <a 
+        href={documentUrl} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="bg-[#1B4B9B] text-white px-4 py-2 rounded hover:bg-[#496DAF]"
+      >
+        View Full Design Document
+      </a>
+    </div>
+  );
+};
